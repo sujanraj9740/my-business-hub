@@ -1,187 +1,4270 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>MY BUSINESS HUB</title>
+<!DOCTYPE html> 
+<html> 
+<head> 
+ 
+<meta name="google-site-verification" content="YOUR-COPIED-CODE"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+ 
+<title>MY BUSINESS HUB</title> 
+ 
+<style> 
+ 
+body { 
+    margin: 0; 
+    font-family: Arial, sans-serif; 
+    background: #f5f7fa; 
+    color: #222; 
+} 
+ 
+header { 
+    background: #111827; 
+    color: white; 
+    padding: 20px; 
+    text-align: center; 
+} 
+ 
+header img { 
+    max-width: 180px; 
+} 
+ 
+nav { 
+    background: #1f2937; 
+    text-align: center; 
+    padding: 12px; 
+} 
+ 
+nav a { 
+    color: white; 
+    text-decoration: none; 
+    margin: 0 15px; 
+    font-weight: bold; 
+} 
+ 
+nav a:hover { 
+    color: #60a5fa; 
+} 
+ 
+section { 
+    padding: 50px 20px; 
+    text-align: center; 
+} 
+ 
+.hero { 
+    background: white; 
+    padding: 80px 20px; 
+} 
+ 
+.hero h2 { 
+    font-size: 40px; 
+} 
+ 
+.hero p { 
+    font-size: 18px; 
+} 
+ 
+.button { 
+    display: inline-block; 
+    margin-top: 20px; 
+    padding: 12px 25px; 
+    background: #2563eb; 
+    color: white; 
+    text-decoration: none; 
+    border-radius: 6px; 
+} 
+ 
+.services { 
+    display: flex; 
+    justify-content: center; 
+    gap: 20px; 
+    flex-wrap: wrap; 
+} 
+ 
+.card { 
+    background: white; 
+    width: 250px; 
+    padding: 25px; 
+    border-radius: 10px; 
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1); 
+} 
+ 
+button { 
+    padding: 10px 18px; 
+    margin: 5px; 
+    border: none; 
+    border-radius: 6px; 
+    background: #2563eb; 
+    color: white; 
+    cursor: pointer; 
+    font-size: 15px; 
+} 
+ 
+button:hover { 
+    background: #1d4ed8; 
+} 
+ 
+.class-button, 
+.level-button { 
+    min-width: 120px; 
+    margin: 8px; 
+} 
+ 
+#quizGame, 
+#practiceGame { 
+    max-width: 800px; 
+    margin: 40px auto; 
+    padding: 30px; 
+    background: white; 
+    border-radius: 15px; 
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1); 
+} 
+ 
+.option-button { 
+    display: block; 
+    width: 100%; 
+    margin: 12px 0; 
+    padding: 15px; 
+    background: #2563eb; 
+    color: white; 
+    border-radius: 8px; 
+} 
+ 
+.correct { 
+    background: #16a34a !important; 
+} 
+ 
+.wrong { 
+    background: #dc2626 !important; 
+} 
+ 
+#quizProgress, 
+#practiceProgress { 
+    font-weight: bold; 
+    color: #555; 
+} 
+ 
+#resultBox, 
+#practiceResultBox { 
+    text-align: center; 
+} 
+ 
+input, 
+textarea, 
+select { 
+    padding: 10px; 
+    width: 80%; 
+    max-width: 500px; 
+    border: 1px solid #ccc; 
+    border-radius: 6px; 
+    margin: 5px; 
+} 
+ 
+select { 
+    background: white; 
+} 
+ 
+.practice-select-box { 
+    background: white; 
+    max-width: 800px; 
+    margin: 30px auto; 
+    padding: 30px; 
+    border-radius: 15px; 
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1); 
+} 
+ 
+.practice-select-box label { 
+    display: block; 
+    font-weight: bold; 
+    margin-top: 15px; 
+} 
+ 
+.practice-select-box select { 
+    width: 90%; 
+    max-width: 500px; 
+} 
+ 
+.practice-start-button { 
+    margin-top: 20px; 
+    font-size: 17px; 
+    padding: 13px 30px; 
+} 
+ 
+#practiceQuestion { 
+    font-size: 22px; 
+    line-height: 1.5; 
+} 
+ 
+/* ========================= 
+   STUDY NOTES 
+   ========================= */ 
+ 
+#studyNotesHub { 
+    background: #eef4ff; 
+} 
+ 
+.study-box { 
+    background: white; 
+    max-width: 900px; 
+    margin: 25px auto; 
+    padding: 30px; 
+    border-radius: 15px; 
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1); 
+} 
+ 
+.study-box select, 
+.study-box input { 
+    width: 90%; 
+    max-width: 600px; 
+} 
+ 
+.study-title { 
+    color: #1d4ed8; 
+    margin-bottom: 10px; 
+} 
+ 
+.chapter-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+    gap: 15px; 
+    margin-top: 25px; 
+} 
+ 
+.chapter-card { 
+    background: #f8fafc; 
+    border: 1px solid #dbeafe; 
+    padding: 18px; 
+    border-radius: 10px; 
+    text-align: left; 
+    cursor: pointer; 
+    transition: 0.2s; 
+} 
+ 
+.chapter-card:hover { 
+    background: #eff6ff; 
+    transform: translateY(-2px); 
+} 
+ 
+.chapter-card h4 { 
+    margin-top: 0; 
+    color: #1e40af; 
+} 
+ 
+.notes-page { 
+    background: white; 
+    max-width: 900px; 
+    margin: 30px auto; 
+    padding: 35px; 
+    border-radius: 15px; 
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1); 
+    text-align: left; 
+    line-height: 1.7; 
+} 
+ 
+.notes-page h2 { 
+    color: #1d4ed8; 
+} 
+ 
+.notes-page h3 { 
+    color: #1e40af; 
+    margin-top: 25px; 
+} 
+ 
+.notes-page ul { 
+    padding-left: 25px; 
+} 
+ 
+.note-highlight { 
+    background: #eff6ff; 
+    border-left: 5px solid #2563eb; 
+    padding: 15px; 
+    margin: 15px 0; 
+    border-radius: 5px; 
+} 
+ 
+.back-button { 
+    background: #374151; 
+} 
+ 
+.study-info { 
+    color: #555; 
+    font-size: 15px; 
+} 
+ 
+/* ========================= 
+   END STUDY NOTES 
+   ========================= */ 
+ 
+footer { 
+    background: #111827; 
+    color: white; 
+    text-align: center; 
+    padding: 20px; 
+} 
+ 
+@media (max-width: 600px) { 
+ 
+    nav a { 
+        display: inline-block; 
+        margin: 5px 8px; 
+    } 
+ 
+    .hero h2 { 
+        font-size: 30px; 
+    } 
+ 
+    .card { 
+        width: 80%; 
+    } 
+ 
+    #quizGame, 
+    #practiceGame { 
+        margin: 20px 10px; 
+        padding: 20px; 
+    } 
+ 
+    .study-box, 
+    .notes-page { 
+        margin: 20px 10px; 
+        padding: 20px; 
+    } 
+ 
+} 
+ 
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f5f7fa;
-            color: #222;
-        }
 
-        header {
-            background-color: #111827;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
+/* =========================
+   ASK ANYTHING AI SEARCH
+   ========================= */
 
-        header h1 {
-            margin: 0;
-            font-size: 32px;
-        }
+.ai-search-section {
+    background: linear-gradient(135deg, #eff6ff, #ffffff);
+    padding: 45px 20px;
+}
 
-        nav {
-            background-color: #1f2937;
-            text-align: center;
-            padding: 12px;
-        }
+.ai-search-box {
+    max-width: 850px;
+    margin: 25px auto 0;
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
+.ai-search-row {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    max-width: 760px;
+    margin: auto;
+}
 
-        .hero {
-            text-align: center;
-            padding: 80px 20px;
-            background-color: white;
-        }
+.ai-search-row input {
+    flex: 1;
+    width: auto;
+    max-width: none;
+    margin: 0;
+    padding: 15px 20px;
+    border: 1px solid #cbd5e1;
+    border-right: none;
+    border-radius: 30px 0 0 30px;
+    font-size: 16px;
+    outline: none;
+}
 
-        .hero h2 {
-            font-size: 40px;
-            margin-bottom: 10px;
-        }
+.ai-search-row input:focus {
+    border-color: #2563eb;
+}
 
-        .hero p {
-            font-size: 18px;
-        }
+.ai-search-button {
+    margin: 0;
+    padding: 0 25px;
+    border-radius: 0 30px 30px 0;
+    white-space: nowrap;
+}
 
-        .button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 25px;
-            background-color: #2563eb;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-        }
+.ai-answer {
+    display: none;
+    max-width: 760px;
+    margin: 22px auto 0;
+    padding: 22px;
+    background: #f8fafc;
+    border: 1px solid #dbeafe;
+    border-radius: 12px;
+    text-align: left;
+    line-height: 1.7;
+}
 
-        section {
-            padding: 50px 20px;
-            text-align: center;
-        }
+.ai-answer h3 {
+    color: #1d4ed8;
+    margin-top: 0;
+}
 
-        .services {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+.ai-answer-text {
+    white-space: pre-wrap;
+}
 
-        .card {
-            background-color: white;
-            width: 250px;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
+.ai-status {
+    color: #2563eb;
+    font-weight: bold;
+}
 
-        footer {
-            background-color: #111827;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-    </style>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MY BUSINESS HUB</title><body>
+.ai-note {
+    max-width: 760px;
+    margin: 12px auto 0;
+    color: #64748b;
+    font-size: 13px;
+}
 
-<header>
-<img src="./logo.png" alt="MY BUSINESS HUB Logo" width="180">
-    <p>Your Business. Your Future.</p>
-</header>
-<nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
+</style> 
+</head> 
+ 
+<body> 
+ 
+<header> 
+ 
+<img src="./logo.png" 
+     alt="MY BUSINESS HUB Logo" 
+     width="180"> 
+ 
+<h1>MY BUSINESS HUB</h1> 
+ 
+<p>Your Business. Your Future.</p> 
+ 
+</header> 
+ 
+ 
+<nav> 
+ 
+<a href="#home">Home</a> 
+<a href="#about">About</a> 
+<a href="#products">Products</a> 
+<a href="#studies">Studies</a> 
+<a href="#services">Services</a> 
 </nav>
 
-<section class="hero" id="home">
-    <h2>Welcome to MY BUSINESS HUB</h2>
-    <p>A place where your business ideas can grow.</p>
-    <a href="#contact" class="button">Contact Us</a>
+<!-- =================================
+     ASK ANYTHING AI SEARCH
+     ================================= -->
+
+<section class="ai-search-section" id="askAnything">
+
+<h2>🤖 Ask Anything</h2>
+
+<p>
+Ask a question and get an AI-powered answer.
+</p>
+
+<div class="ai-search-box">
+
+<div class="ai-search-row">
+
+<input
+    type="text"
+    id="aiQuestion"
+    placeholder="Ask anything..."
+    autocomplete="off"
+    maxlength="2000"
+>
+
+<button
+    class="ai-search-button"
+    onclick="askAnything()"
+>
+🔍 Ask
+</button>
+
+</div>
+
+<div id="aiAnswer" class="ai-answer">
+
+<h3>Answer</h3>
+
+<div id="aiAnswerText" class="ai-answer-text"></div>
+
+</div>
+
+<p class="ai-note">
+Answers are generated by an AI service. For important or current information, verify the answer with reliable sources.
+</p>
+
+</div>
+
 </section>
+ 
+ 
+ 
+<section class="hero" id="home"> 
+ 
+<h2>Welcome to MY BUSINESS HUB</h2> 
+ 
+<p>A place where your business ideas can grow.</p> 
+ 
+ 
+</section> 
+ 
+ 
+<section id="about"> 
+ 
+<h2>About Us</h2> 
+ 
+<p> 
+MY BUSINESS HUB is a flexible business platform 
+designed for future products, services and opportunities. 
+</p> 
+ 
+</section> 
+ 
+ 
+<section id="products"> 
+ 
+<h2>Our Products</h2> 
+ 
+<p>Choose a product and add it to your cart.</p> 
+ 
+<div class="services"> 
+ 
+<div class="card"> 
+ 
+<h3>Product 1</h3> 
+ 
+<p>Quality product for your needs.</p> 
+ 
+<p><strong>₹499</strong></p> 
+ 
+<button onclick="addToCart('Product 1',499)"> 
+Add to Cart 
+</button> 
+ 
+</div> 
+ 
+ 
+<div class="card"> 
+ 
+<h3>Product 2</h3> 
+ 
+<p>Reliable product at great value.</p> 
+ 
+<p><strong>₹799</strong></p> 
+ 
+<button onclick="addToCart('Product 2',799)"> 
+Add to Cart 
+</button> 
+ 
+</div> 
+ 
+ 
+<div class="card"> 
+ 
+<h3>Product 3</h3> 
+ 
+<p>New and useful solution.</p> 
+ 
+<p><strong>₹999</strong></p> 
+ 
+<button onclick="addToCart('Product 3',999)"> 
+Add to Cart 
+</button> 
+ 
+</div> 
+ 
+</div> 
+ 
+ 
+<div id="cart" style="margin-top:40px;"> 
+ 
+<h2>🛒 Your Cart</h2> 
+ 
+<p id="cartItems">Your cart is empty.</p> 
+ 
+<h3 id="cartTotal">Total: ₹0</h3> 
+ 
+</div> 
+ 
+</section> 
+ 
+ 
+<section id="studies"> 
+ 
+<h2>📚 Study Hub</h2> 
+ 
+<p>Learn, practise and improve your knowledge.</p> 
+ 
+<div class="services"> 
+ 
+ 
+<div class="card"> 
+ 
+<h3>📚 Study Notes</h3> 
+ 
+<p> 
+Chapter-wise notes for Classes 6 to 10. 
+</p> 
+ 
+<button onclick="openStudyNotes()"> 
+View Notes 
+</button> 
+ 
+</div> 
+ 
+ 
+<div class="card"> 
+ 
+<h3>📝 Practice Questions</h3> 
+ 
+<p>Practise questions for Classes 6 to 10.</p> 
+ 
+<button onclick="openPractice()"> 
+Practice Now 
+</button> 
+ 
+</div> 
+ 
+ 
+<div class="card"> 
+ 
+<h3>🧠 Quizzes</h3> 
+ 
+<p>Test your knowledge with fun quizzes.</p> 
+ 
+<button onclick="startQuiz()"> 
+Take a Quiz 
+</button> 
+ 
+</div> 
+ 
+</div> 
+ 
+</section> 
+ 
+ 
+<!-- ================================= 
+     STUDY NOTES HUB 
+     ================================= --> 
+ 
+<section id="studyNotesHub"> 
+ 
+<h2>📚 Study Notes</h2> 
+ 
+<p> 
+Class 6–10 • CBSE • ICSE • Karnataka State Board 
+</p> 
+ 
+<div id="studySelection" class="study-box"> 
+ 
+<h3>🎓 Select Class</h3> 
+ 
+<select id="studyClass" onchange="updateStudySubjects()"> 
+ 
+<option value="">Select Class</option> 
+<option value="6">Class 6</option> 
+<option value="7">Class 7</option> 
+<option value="8">Class 8</option> 
+<option value="9">Class 9</option> 
+<option value="10">Class 10</option> 
+ 
+</select> 
+ 
+ 
+<h3>🏫 Select Board</h3> 
+ 
+<select id="studyBoard" onchange="updateStudySubjects()"> 
+ 
+<option value="">Select Board</option> 
+<option value="CBSE">CBSE</option> 
+<option value="ICSE">ICSE</option> 
+<option value="KARNATAKA">Karnataka State Board</option> 
+ 
+</select> 
+ 
+ 
+<h3>📖 Select Subject</h3> 
+ 
+<select id="studySubject" onchange="showStudyChapters()"> 
+ 
+<option value="">Select Subject</option> 
+ 
+</select> 
+ 
+<br> 
+ 
+<input 
+    type="text" 
+    id="chapterSearch" 
+    placeholder="🔎 Search chapter..." 
+    oninput="filterStudyChapters()" 
+> 
+ 
+<p class="study-info"> 
+Select your class, board and subject to see chapter-wise notes. 
+</p> 
+ 
+</div> 
+ 
+ 
+<div id="chapterArea" class="study-box" style="display:none;"> 
+ 
+<h2 id="chapterHeading"></h2> 
+ 
+<div id="chapterList" class="chapter-grid"></div> 
+ 
+</div> 
+ 
+ 
+<div id="notesArea" style="display:none;"> 
+ 
+<div id="notesContent" class="notes-page"></div> 
+ 
+</div> 
+ 
+</section> 
+ 
+ 
+<!-- ================================= 
+     PRACTICE QUESTIONS 
+     ================================= --> 
+ 
+<section id="practiceHub" style="display:none;"> 
+ 
+<h2>📝 Practice Questions</h2> 
+ 
+<p> 
+Practice questions for Classes 6–10. 
+</p> 
+ 
+ 
+<div class="practice-select-box"> 
+ 
+<h3>🎓 Select Class</h3> 
+ 
+<select id="practiceClass" onchange="updatePracticeSubjects()"> 
+ 
+<option value="">Select Class</option> 
+<option value="6">Class 6</option> 
+<option value="7">Class 7</option> 
+<option value="8">Class 8</option> 
+<option value="9">Class 9</option> 
+<option value="10">Class 10</option> 
+ 
+</select> 
+ 
+ 
+<h3>🏫 Select Board</h3> 
+ 
+<select id="practiceBoard"> 
+ 
+<option value="">Select Board</option> 
+<option value="CBSE">CBSE</option> 
+<option value="ICSE">ICSE</option> 
+<option value="STATE">State Board</option> 
+ 
+</select> 
+ 
+ 
+<h3>📚 Select Subject</h3> 
+ 
+<select id="practiceSubject"> 
+ 
+<option value="">Select Subject</option> 
+ 
+</select> 
+ 
+ 
+<h3>⚡ Select Difficulty</h3> 
+ 
+<select id="practiceDifficulty"> 
+ 
+<option value="">Select Difficulty</option> 
+<option value="easy">Easy</option> 
+<option value="medium">Medium</option> 
+<option value="hard">Hard</option> 
+<option value="mixed">Mixed</option> 
+ 
+</select> 
+ 
+<br> 
+ 
+<button class="practice-start-button" 
+        onclick="startPractice()"> 
+ 
+🚀 Start Practice 
+ 
+</button> 
+ 
+</div> 
+ 
+</section> 
+ 
+ 
+<div id="practiceGame" style="display:none;"> 
+ 
+<h2 id="practiceTitle"> 
+📝 Practice Questions 
+</h2> 
+ 
+<p id="practiceProgress"></p> 
+ 
+<h3 id="practiceQuestion"></h3> 
+ 
+<div id="practiceOptions"></div> 
+ 
+<h3 id="practiceScore"> 
+🏆 Score: 0 
+</h3> 
+ 
+<div id="practiceResultBox"></div> 
+ 
+</div> 
+ 
+ 
+<!-- ================================= 
+     QUIZ HUB 
+     ================================= --> 
+ 
+<section id="quizHub" style="display:none;"> 
+ 
+<h2>🧠 BrainSpark Quiz</h2> 
+ 
+<p>Choose your class and challenge yourself!</p> 
+ 
+<h3>🎓 Select Your Class</h3> 
+ 
+<button class="class-button" onclick="selectClass(6)"> 
+Class 6 
+</button> 
+ 
+<button class="class-button" onclick="selectClass(7)"> 
+Class 7 
+</button> 
+ 
+<button class="class-button" onclick="selectClass(8)"> 
+Class 8 
+</button> 
+ 
+<button class="class-button" onclick="selectClass(9)"> 
+Class 9 
+</button> 
+ 
+<button class="class-button" onclick="selectClass(10)"> 
+Class 10 
+</button> 
+ 
+<button class="class-button" onclick="selectClass('11+')"> 
+Class 11+ 
+</button> 
+ 
+ 
+<div id="levelArea" 
+     style="display:none;margin-top:30px;"> 
+ 
+<h3>⚡ Choose Your Challenge</h3> 
+ 
+<button class="level-button" 
+        onclick="startLevel('easy')"> 
+🟢 Easy 
+</button> 
+ 
+<button class="level-button" 
+        onclick="startLevel('medium')"> 
+🟡 Medium 
+</button> 
+ 
+<button class="level-button" 
+        onclick="startLevel('hard')"> 
+🔴 Hard 
+</button> 
+ 
+<button class="level-button" 
+        onclick="startLevel('mixed')"> 
+🔥 Mixed Challenge 
+</button> 
+ 
+</div> 
+ 
+</section> 
+ 
+ 
+<div id="quizGame" style="display:none;"> 
+ 
+<h2 id="quizTitle"> 
+🧠 BrainSpark Quiz 
+</h2> 
+ 
+<p id="quizProgress"></p> 
+ 
+<h3 id="question"></h3> 
+ 
+<div id="options"></div> 
+ 
+<h3 id="score">🏆 Score: 0</h3> 
+ 
+<div id="resultBox"></div> 
+ 
+</div> 
+ 
+ 
+<section id="services"> 
+ 
+<h2>Our Services</h2> 
+ 
+<div class="services"> 
+ 
+<div class="card"> 
+ 
+<h3>Products</h3> 
+ 
+<p>Showcase and sell your products here.</p> 
+ 
+</div> 
+ 
+ 
+<div class="card"> 
+ 
+<h3>Services</h3> 
+ 
+<p>Tell customers about the services you provide.</p> 
+ 
+</div> 
+ 
+ 
+<div class="card"> 
+ 
+<h3>Business Solutions</h3> 
+ 
+<p>Build new opportunities for your future business.</p> 
+ 
+</div> 
+ 
+</div> 
+ 
+</section> 
+ 
+ 
+<footer> 
+ 
+<p> 
+© 2026 MY BUSINESS HUB. All Rights Reserved. 
+</p> 
+ 
+</footer> 
+ 
+ 
+<script> 
+ 
+/* ================================= 
+   SHOPPING CART 
+   ================================= */ 
+ 
+let cart = []; 
+ 
+function addToCart(name, price) { 
+ 
+    cart.push({ 
+        name: name, 
+        price: price 
+    }); 
+ 
+    displayCart(); 
+ 
+} 
+ 
+ 
+function displayCart() { 
+ 
+    let cartItems = 
+        document.getElementById("cartItems"); 
+ 
+    let cartTotal = 
+        document.getElementById("cartTotal"); 
+ 
+    if (cart.length === 0) { 
+ 
+        cartItems.innerHTML = 
+            "Your cart is empty."; 
+ 
+        cartTotal.innerHTML = 
+            "Total: ₹0"; 
+ 
+        return; 
+ 
+    } 
+ 
+    let total = 0; 
+    let items = ""; 
+ 
+    cart.forEach(function(item,index) { 
+ 
+        items += 
+            item.name + 
+            " - ₹" + 
+            item.price + 
+            ' <button onclick="removeFromCart(' + 
+            index + 
+            ')">Remove</button><br><br>'; 
+ 
+        total += item.price; 
+ 
+    }); 
+ 
+    cartItems.innerHTML = items; 
+ 
+    cartTotal.innerHTML = 
+        "Total: ₹" + total; 
+ 
+} 
+ 
+ 
+function removeFromCart(index) { 
+ 
+    cart.splice(index,1); 
+ 
+    displayCart(); 
+ 
+} 
+ 
+ 
+/* ================================= 
+   STUDY NOTES 
+   ================================= */ 
+ 
+const studySubjects = { 
+ 
+    "6": { 
+        CBSE: [ 
+            ["maths","Mathematics"], 
+            ["science","Science"], 
+            ["social","Social Science"], 
+            ["english","English"], 
+            ["computer","Computer"] 
+        ], 
+        ICSE: [ 
+            ["maths","Mathematics"], 
+            ["physics","Physics"], 
+            ["chemistry","Chemistry"], 
+            ["biology","Biology"], 
+            ["history","History & Civics"], 
+            ["geography","Geography"], 
+            ["english","English"], 
+            ["computer","Computer"] 
+        ], 
+        KARNATAKA: [ 
+            ["maths","Mathematics"], 
+            ["science","Science"], 
+            ["social","Social Science"], 
+            ["english","English"], 
+            ["kannada","Kannada"], 
+            ["computer","Computer"] 
+        ] 
+    }, 
+ 
+    "7": { 
+        CBSE: [ 
+            ["maths","Mathematics"], 
+            ["science","Science"], 
+            ["social","Social Science"], 
+            ["english","English"], 
+            ["computer","Computer"] 
+        ], 
+        ICSE: [ 
+            ["maths","Mathematics"], 
+            ["physics","Physics"], 
+            ["chemistry","Chemistry"], 
+            ["biology","Biology"], 
+            ["history","History & Civics"], 
+            ["geography","Geography"], 
+            ["english","English"], 
+            ["computer","Computer"] 
+        ], 
+        KARNATAKA: [ 
+            ["maths","Mathematics"], 
+            ["science","Science"], 
+            ["social","Social Science"], 
+            ["english","English"], 
+            ["kannada","Kannada"], 
+            ["computer","Computer"] 
+        ] 
+    }, 
+ 
+    "8": { 
+        CBSE: [ 
+            ["maths","Mathematics"], 
+            ["science","Science"], 
+            ["social","Social Science"], 
+            ["english","English"], 
+            ["computer","Computer"] 
+        ], 
+        ICSE: [ 
+            ["maths","Mathematics"], 
+            ["physics","Physics"], 
+            ["chemistry","Chemistry"], 
+            ["biology","Biology"], 
+            ["history","History & Civics"], 
+            ["geography","Geography"], 
+            ["english","English"], 
+            ["computer","Computer"] 
+        ], 
+        KARNATAKA: [ 
+            ["maths","Mathematics"], 
+            ["science","Science"], 
+            ["social","Social Science"], 
+            ["english","English"], 
+            ["kannada","Kannada"], 
+            ["computer","Computer"] 
+        ] 
+    }, 
+ 
+    "9": { 
+        CBSE: [ 
+            ["maths","Mathematics"], 
+            ["science","Science"], 
+            ["social","Social Science"], 
+            ["english","English"], 
+            ["computer","Computer"] 
+        ], 
+        ICSE: [ 
+            ["maths","Mathematics"], 
+            ["physics","Physics"], 
+            ["chemistry","Chemistry"], 
+            ["biology","Biology"], 
+            ["history","History & Civics"], 
+            ["geography","Geography"], 
+            ["english","English"], 
+            ["computer","Computer"] 
+        ], 
+        KARNATAKA: [ 
+            ["maths","Mathematics"], 
+            ["science","Science"], 
+            ["social","Social Science"], 
+            ["english","English"], 
+            ["kannada","Kannada"], 
+            ["computer","Computer"] 
+        ] 
+    }, 
+ 
+    "10": { 
+        CBSE: [ 
+            ["maths","Mathematics"], 
+            ["science","Science"], 
+            ["social","Social Science"], 
+            ["english","English"], 
+            ["computer","Computer"] 
+        ], 
+        ICSE: [ 
+            ["maths","Mathematics"], 
+            ["physics","Physics"], 
+            ["chemistry","Chemistry"], 
+            ["biology","Biology"], 
+            ["history","History & Civics"], 
+            ["geography","Geography"], 
+            ["english","English"], 
+            ["computer","Computer"] 
+        ], 
+        KARNATAKA: [ 
+            ["maths","Mathematics"], 
+            ["science","Science"], 
+            ["social","Social Science"], 
+            ["english","English"], 
+            ["kannada","Kannada"], 
+            ["computer","Computer"] 
+        ] 
+    } 
+ 
+}; 
+ 
+ 
+/* ================================= 
+   CHAPTER DATABASE 
+   ================================= */ 
+ 
+const studyChapters = { 
+ 
+maths: [ 
+ 
+"Knowing Our Numbers", 
+"Whole Numbers", 
+"Playing with Numbers", 
+"Basic Geometrical Ideas", 
+"Understanding Elementary Shapes", 
+"Integers", 
+"Fractions", 
+"Decimals", 
+"Data Handling", 
+"Mensuration", 
+"Algebra", 
+"Ratio and Proportion", 
+"Percentage", 
+"Lines and Angles", 
+"Triangles", 
+"Quadrilaterals", 
+"Circles", 
+"Coordinate Geometry", 
+"Number Systems", 
+"Polynomials", 
+"Linear Equations", 
+"Quadratic Equations", 
+"Arithmetic Progressions", 
+"Triangles and Similarity", 
+"Circles", 
+"Surface Areas and Volumes", 
+"Statistics", 
+"Probability", 
+"Trigonometry" 
+ 
+], 
+ 
+science: [ 
+ 
+"Food and Its Components", 
+"Components of Food", 
+"Sorting Materials", 
+"Separation of Substances", 
+"Changes Around Us", 
+"Getting to Know Plants", 
+"Body Movements", 
+"The Living Organisms", 
+"Motion and Measurement", 
+"Light, Shadows and Reflections", 
+"Electricity and Circuits", 
+"Fun with Magnets", 
+"Water", 
+"Air Around Us", 
+"Natural Resources", 
+"Nutrition in Plants", 
+"Nutrition in Animals", 
+"Heat", 
+"Acids, Bases and Salts", 
+"Physical and Chemical Changes", 
+"Weather and Climate", 
+"Cell Structure", 
+"Reproduction in Plants", 
+"Force and Pressure", 
+"Sound", 
+"Light", 
+"Chemical Reactions", 
+"Atoms and Molecules", 
+"Structure of the Atom", 
+"Tissues", 
+"Motion", 
+"Force and Laws of Motion", 
+"Gravitation", 
+"Work and Energy", 
+"Sound", 
+"Why Do We Fall Ill", 
+"Natural Resources", 
+"Improvement in Food Resources", 
+"Chemical Substances", 
+"Life Processes", 
+"Control and Coordination", 
+"How Do Organisms Reproduce", 
+"Heredity", 
+"Light – Reflection and Refraction", 
+"Human Eye and Colourful World", 
+"Electricity", 
+"Magnetic Effects of Electric Current", 
+"Sources of Energy", 
+"Our Environment", 
+"Management of Natural Resources" 
+ 
+], 
+ 
+social: [ 
+ 
+"History – Early Humans", 
+"History – Ancient Civilisations", 
+"History – The Medieval Period", 
+"History – The Delhi Sultanate", 
+"History – The Mughal Empire", 
+"History – The British Period", 
+"History – The Indian National Movement", 
+"History – India After Independence", 
+"Geography – The Earth", 
+"Geography – Globe and Maps", 
+"Geography – Landforms", 
+"Geography – Climate", 
+"Geography – Natural Resources", 
+"Geography – Agriculture", 
+"Geography – Industries", 
+"Geography – Population", 
+"Geography – Transport", 
+"Geography – Environment", 
+"Civics – Diversity", 
+"Civics – Government", 
+"Civics – Democracy", 
+"Civics – Constitution", 
+"Civics – Parliament", 
+"Civics – Judiciary", 
+"Civics – Elections", 
+"Civics – Local Government", 
+"Civics – Fundamental Rights", 
+"Civics – Federalism", 
+"Civics – Political Parties", 
+"Civics – Democratic Rights", 
+"Civics – Economics and Development" 
+ 
+], 
+ 
+english: [ 
+ 
+"Grammar – Nouns", 
+"Grammar – Pronouns", 
+"Grammar – Adjectives", 
+"Grammar – Verbs", 
+"Grammar – Adverbs", 
+"Grammar – Prepositions", 
+"Grammar – Conjunctions", 
+"Grammar – Articles", 
+"Grammar – Tenses", 
+"Grammar – Subject and Predicate", 
+"Grammar – Active and Passive Voice", 
+"Grammar – Direct and Indirect Speech", 
+"Grammar – Sentence Types", 
+"Grammar – Punctuation", 
+"Writing – Letter Writing", 
+"Writing – Notice Writing", 
+"Writing – Essay Writing", 
+"Writing – Story Writing", 
+"Writing – Email Writing", 
+"Comprehension Skills", 
+"Vocabulary" 
+ 
+], 
+ 
+computer: [ 
+ 
+"Introduction to Computers", 
+"Computer Hardware", 
+"Computer Software", 
+"Operating Systems", 
+"Files and Folders", 
+"Internet", 
+"Web Browsers", 
+"Cyber Safety", 
+"Computer Networks", 
+"Algorithms", 
+"Flowcharts", 
+"Programming Basics", 
+"Variables and Data Types", 
+"Operators", 
+"Conditional Statements", 
+"Loops", 
+"Arrays", 
+"Functions", 
+"HTML Basics", 
+"CSS Basics", 
+"JavaScript Basics", 
+"Database Basics", 
+"Artificial Intelligence Basics" 
+ 
+], 
+ 
+physics: [ 
+ 
+"Measurements", 
+"Motion", 
+"Force", 
+"Work and Energy", 
+"Heat", 
+"Light", 
+"Sound", 
+"Electricity", 
+"Magnetism", 
+"Simple Machines" 
+ 
+], 
+ 
+chemistry: [ 
+ 
+"Introduction to Chemistry", 
+"Matter", 
+"Physical and Chemical Changes", 
+"Elements and Compounds", 
+"Atoms and Molecules", 
+"Chemical Reactions", 
+"Acids Bases and Salts", 
+"Periodic Table", 
+"Metals and Non-metals", 
+"Carbon Compounds", 
+"Environmental Chemistry" 
+ 
+], 
+ 
+biology: [ 
+ 
+"Living Organisms", 
+"Cell", 
+"Plant Tissues", 
+"Animal Tissues", 
+"Nutrition", 
+"Respiration", 
+"Transportation", 
+"Excretion", 
+"Reproduction", 
+"Health and Diseases", 
+"Ecology", 
+"Environment" 
+ 
+], 
+ 
+history: [ 
+ 
+"Ancient Civilisations", 
+"Medieval India", 
+"Delhi Sultanate", 
+"Mughal Empire", 
+"European Expansion", 
+"British Rule", 
+"Indian National Movement", 
+"First World War", 
+"Second World War", 
+"Indian Independence", 
+"Indian Constitution", 
+"Union Government", 
+"State Government", 
+"Judiciary" 
+ 
+], 
+ 
+geography: [ 
+ 
+"The Earth", 
+"Latitude and Longitude", 
+"Maps", 
+"Rocks", 
+"Landforms", 
+"Atmosphere", 
+"Weather and Climate", 
+"Water Resources", 
+"Natural Vegetation", 
+"Soil", 
+"Agriculture", 
+"Minerals", 
+"Industries", 
+"Population", 
+"Transport", 
+"Communication", 
+"Environmental Issues" 
+ 
+], 
+ 
+kannada: [ 
+ 
+"ಪದ್ಯ ಅಧ್ಯಯನ", 
+"ಗದ್ಯ ಅಧ್ಯಯನ", 
+"ಕಥೆ", 
+"ವ್ಯಾಕರಣ", 
+"ನಾಮಪದ", 
+"ಸರ್ವನಾಮ", 
+"ಕ್ರಿಯಾಪದ", 
+"ವಿಶೇಷಣ", 
+"ಸಂಧಿ", 
+"ಸಮಾಸ", 
+"ಪತ್ರ ಬರವಣಿಗೆ", 
+"ಪ್ರಬಂಧ ಬರವಣಿಗೆ", 
+"ಅರ್ಥಗ್ರಹಣ" 
+ 
+] 
+ 
+}; 
+ 
+ 
+/* ================================= 
+   OPEN STUDY NOTES 
+   ================================= */ 
+ 
+function openStudyNotes() { 
+ 
+    document.getElementById("studyNotesHub").style.display = 
+        "block"; 
+ 
+    document.getElementById("studyNotesHub").scrollIntoView({ 
+        behavior: "smooth" 
+    }); 
+ 
+} 
+ 
+ 
+/* ================================= 
+   UPDATE STUDY SUBJECTS 
+   ================================= */ 
+ 
+function updateStudySubjects() { 
+ 
+    let classValue = 
+        document.getElementById("studyClass").value; 
+ 
+    let boardValue = 
+        document.getElementById("studyBoard").value; 
+ 
+    let subject = 
+        document.getElementById("studySubject"); 
+ 
+    subject.innerHTML = 
+        '<option value="">Select Subject</option>'; 
+ 
+    document.getElementById("chapterArea").style.display = 
+        "none"; 
+ 
+    document.getElementById("notesArea").style.display = 
+        "none"; 
+ 
+    if ( 
+        classValue === "" || 
+        boardValue === "" 
+    ) { 
+        return; 
+    } 
+ 
+    let subjects = 
+        studySubjects[classValue][boardValue]; 
+ 
+    subjects.forEach(function(item) { 
+ 
+        subject.innerHTML += 
+            '<option value="' + 
+            item[0] + 
+            '">' + 
+            item[1] + 
+            '</option>'; 
+ 
+    }); 
+ 
+} 
+ 
+ 
+/* ================================= 
+   SHOW STUDY CHAPTERS 
+   ================================= */ 
+ 
+function showStudyChapters() { 
+ 
+    let subject = 
+        document.getElementById("studySubject").value; 
+ 
+    let classValue = 
+        document.getElementById("studyClass").value; 
+ 
+    let boardValue = 
+        document.getElementById("studyBoard").value; 
+ 
+    if ( 
+        subject === "" || 
+        classValue === "" || 
+        boardValue === "" 
+    ) { 
+        return; 
+    } 
+ 
+    document.getElementById("notesArea").style.display = 
+        "none"; 
+ 
+    document.getElementById("chapterArea").style.display = 
+        "block"; 
+ 
+    document.getElementById("chapterSearch").value = ""; 
+ 
+    document.getElementById("chapterHeading").innerHTML = 
+        "📖 Class " + 
+        classValue + 
+        " • " + 
+        boardValue + 
+        " • " + 
+        subject.toUpperCase() + 
+        " Chapters"; 
+ 
+    displayStudyChapters(studyChapters[subject] || []); 
+ 
+} 
+ 
+ 
+/* ================================= 
+   DISPLAY CHAPTERS 
+   ================================= */ 
+ 
+function displayStudyChapters(chapters) { 
+ 
+    let list = 
+        document.getElementById("chapterList"); 
+ 
+    list.innerHTML = ""; 
+ 
+    chapters.forEach(function(chapter) { 
+ 
+        let card = 
+            document.createElement("div"); 
+ 
+        card.className = "chapter-card"; 
+ 
+        card.innerHTML = 
+            "<h4>📘 " + 
+            chapter + 
+            "</h4>" + 
+            "<p>Open chapter notes →</p>"; 
+ 
+        card.onclick = function() { 
+            openChapterNotes(chapter); 
+        }; 
+ 
+        list.appendChild(card); 
+ 
+    }); 
+ 
+} 
+ 
+ 
+/* ================================= 
+   SEARCH CHAPTERS 
+   ================================= */ 
+ 
+function filterStudyChapters() { 
+ 
+    let search = 
+        document.getElementById("chapterSearch").value 
+        .toLowerCase(); 
+ 
+    let subject = 
+        document.getElementById("studySubject").value; 
+ 
+    let chapters = 
+        studyChapters[subject] || []; 
+ 
+    let filtered = 
+        chapters.filter(function(chapter) { 
+ 
+            return chapter 
+                .toLowerCase() 
+                .includes(search); 
+ 
+        }); 
+ 
+    displayStudyChapters(filtered); 
+ 
+} 
+ 
+ 
+/* ================================= 
+   OPEN CHAPTER NOTES 
+   ================================= */ 
+ 
+function openChapterNotes(chapter) { 
+ 
+    let classValue = 
+        document.getElementById("studyClass").value; 
+ 
+    let boardValue = 
+        document.getElementById("studyBoard").value; 
+ 
+    let subject = 
+        document.getElementById("studySubject").value; 
+ 
+    document.getElementById("chapterArea").style.display = 
+        "none"; 
+ 
+    document.getElementById("notesArea").style.display = 
+        "block"; 
+ 
+    let subjectName = 
+        document.getElementById("studySubject") 
+        .options[ 
+            document.getElementById("studySubject").selectedIndex 
+        ].text; 
+ 
+    let content = 
+        createChapterNotes( 
+            classValue, 
+            boardValue, 
+            subjectName, 
+            chapter 
+        ); 
+ 
+    document.getElementById("notesContent").innerHTML = 
+        content; 
+ 
+    document.getElementById("notesArea").scrollIntoView({ 
+        behavior: "smooth" 
+    }); 
+ 
+} 
+ 
+ 
+/* ================================= 
+   CREATE CHAPTER NOTES 
+   ================================= */ 
+ 
+function createChapterNotes( 
+    classValue, 
+    boardValue, 
+    subjectName, 
+    chapter 
+) { 
+ 
+    let lower = 
+        chapter.toLowerCase(); 
+ 
+    let topicNotes = ""; 
+ 
+    if (lower.includes("fraction")) { 
+ 
+        topicNotes = ` 
+        <h3>📌 Meaning</h3> 
+        <p> 
+        A fraction represents a part of a whole. 
+        It has a numerator and denominator. 
+        </p> 
+ 
+        <div class="note-highlight"> 
+        <strong>Example:</strong> In 3/5, 3 is the numerator 
+        and 5 is the denominator. 
+        </div> 
+ 
+        <h3>⭐ Important Points</h3> 
+        <ul> 
+        <li>Numerator is written above the line.</li> 
+        <li>Denominator is written below the line.</li> 
+        <li>Proper fractions have numerator smaller than denominator.</li> 
+        <li>Improper fractions have numerator greater than or equal to denominator.</li> 
+        </ul> 
+ 
+        <h3>🧠 Remember</h3> 
+        <p> 
+        Equivalent fractions have the same value even though 
+        their numerator and denominator may be different. 
+        </p> 
+        `; 
+ 
+    } 
+ 
+    else if ( 
+        lower.includes("algebra") || 
+        lower.includes("linear equation") || 
+        lower.includes("quadratic") 
+    ) { 
+ 
+        topicNotes = ` 
+        <h3>📌 Meaning</h3> 
+ 
+        <p> 
+        Algebra uses letters and numbers to represent quantities 
+        and relationships. 
+        </p> 
+ 
+        <div class="note-highlight"> 
+        <strong>Example:</strong> 
+        2x + 5 = 15 
+        <br> 
+        2x = 10 
+        <br> 
+        x = 5 
+        </div> 
+ 
+        <h3>⭐ Important Points</h3> 
+ 
+        <ul> 
+        <li>A variable represents an unknown quantity.</li> 
+        <li>A constant has a fixed value.</li> 
+        <li>An equation contains an equality sign.</li> 
+        <li>The same operation should be performed on both sides.</li> 
+        </ul> 
+ 
+        <h3>🧠 Exam Tip</h3> 
+ 
+        <p> 
+        Always check the value obtained by substituting it 
+        back into the original equation. 
+        </p> 
+        `; 
+ 
+    } 
+ 
+    else if ( 
+        lower.includes("motion") || 
+        lower.includes("force") || 
+        lower.includes("work") || 
+        lower.includes("energy") 
+    ) { 
+ 
+        topicNotes = ` 
+        <h3>📌 Basic Idea</h3> 
+ 
+        <p> 
+        Motion describes a change in the position of an object 
+        with respect to time. 
+        </p> 
+ 
+        <h3>📐 Important Formulae</h3> 
+ 
+        <div class="note-highlight"> 
+ 
+        Speed = Distance ÷ Time 
+ 
+        <br><br> 
+ 
+        Distance = Speed × Time 
+ 
+        <br><br> 
+ 
+        Time = Distance ÷ Speed 
+ 
+        </div> 
+ 
+        <h3>⭐ Important Points</h3> 
+ 
+        <ul> 
+        <li>Distance tells how much ground an object covers.</li> 
+        <li>Speed tells how fast an object moves.</li> 
+        <li>Force can change the motion or shape of an object.</li> 
+        <li>Energy is the capacity to do work.</li> 
+        </ul> 
+        `; 
+ 
+    } 
+ 
+    else if ( 
+        lower.includes("cell") || 
+        lower.includes("tissue") || 
+        lower.includes("nutrition") || 
+        lower.includes("respiration") 
+    ) { 
+ 
+        topicNotes = ` 
+        <h3>📌 Basic Idea</h3> 
+ 
+        <p> 
+        Living organisms are made up of cells. The cell is the 
+        basic structural and functional unit of life. 
+        </p> 
+ 
+        <h3>🔬 Important Points</h3> 
+ 
+        <ul> 
+        <li>Cell membrane surrounds the cell.</li> 
+        <li>Cytoplasm contains many cell structures.</li> 
+        <li>The nucleus contains genetic material.</li> 
+        <li>Plant cells have a cell wall.</li> 
+        <li>Chloroplasts help green plants carry out photosynthesis.</li> 
+        </ul> 
+ 
+        <h3>🧠 Remember</h3> 
+ 
+        <div class="note-highlight"> 
+        Nucleus → controls many cell activities. 
+        <br> 
+        Chloroplast → photosynthesis. 
+        <br> 
+        Mitochondria → releases energy from food. 
+        </div> 
+        `; 
+ 
+    } 
+ 
+    else if ( 
+        lower.includes("history") || 
+        lower.includes("mughal") || 
+        lower.includes("sultanate") || 
+        lower.includes("independence") || 
+        lower.includes("british") 
+    ) { 
+ 
+        topicNotes = ` 
+        <h3>📌 Chapter Overview</h3> 
+ 
+        <p> 
+        This chapter should be studied through important events, 
+        people, causes, effects and dates. 
+        </p> 
+ 
+        <h3>⭐ How to Study History</h3> 
+ 
+        <ul> 
+        <li>Learn important events in chronological order.</li> 
+        <li>Remember important personalities and their contributions.</li> 
+        <li>Study causes and consequences separately.</li> 
+        <li>Make a short timeline for revision.</li> 
+        <li>Practise source-based and reason-based questions.</li> 
+        </ul> 
+ 
+        <h3>📝 Exam Revision</h3> 
+ 
+        <div class="note-highlight"> 
+        Remember: 
+        <br> 
+        Event → Cause → Main development → Result → Historical importance. 
+        </div> 
+        `; 
+ 
+    } 
+ 
+    else if ( 
+        lower.includes("geography") || 
+        lower.includes("climate") || 
+        lower.includes("agriculture") || 
+        lower.includes("population") || 
+        lower.includes("transport") 
+    ) { 
+ 
+        topicNotes = ` 
+        <h3>🌍 Chapter Overview</h3> 
+ 
+        <p> 
+        Geography explains the relationship between people, 
+        places, physical features and natural resources. 
+        </p> 
+ 
+        <h3>⭐ Important Points</h3> 
+ 
+        <ul> 
+        <li>Learn important geographical terms and definitions.</li> 
+        <li>Use maps wherever required.</li> 
+        <li>Study causes, effects and distribution.</li> 
+        <li>Remember important examples.</li> 
+        <li>Practise map-based questions.</li> 
+        </ul> 
+ 
+        <h3>🧠 Revision Method</h3> 
+ 
+        <div class="note-highlight"> 
+        Location → Features → Causes → Effects → Examples. 
+        </div> 
+        `; 
+ 
+    } 
+ 
+    else if ( 
+        lower.includes("grammar") || 
+        lower.includes("noun") || 
+        lower.includes("pronoun") || 
+        lower.includes("verb") || 
+        lower.includes("tense") || 
+        lower.includes("voice") 
+    ) { 
+ 
+        topicNotes = ` 
+        <h3>📌 Grammar Focus</h3> 
+ 
+        <p> 
+        Grammar helps us construct clear and meaningful sentences. 
+        </p> 
+ 
+        <h3>⭐ Important Points</h3> 
+ 
+        <ul> 
+        <li>Identify the subject and predicate.</li> 
+        <li>Use the correct form of the verb.</li> 
+        <li>Check subject–verb agreement.</li> 
+        <li>Use punctuation correctly.</li> 
+        <li>Read the complete sentence before selecting an answer.</li> 
+        </ul> 
+ 
+        <h3>📝 Exam Tip</h3> 
+ 
+        <div class="note-highlight"> 
+        Read the complete sentence first. Then identify the 
+        grammatical rule being tested. 
+        </div> 
+        `; 
+ 
+    } 
+ 
+    else if ( 
+        lower.includes("computer") || 
+        lower.includes("programming") || 
+        lower.includes("algorithm") || 
+        lower.includes("html") || 
+        lower.includes("javascript") 
+    ) { 
+ 
+        topicNotes = ` 
+        <h3>💻 Chapter Overview</h3> 
+ 
+        <p> 
+        Computer studies include hardware, software, 
+        problem solving, programming and digital technologies. 
+        </p> 
+ 
+        <h3>⭐ Important Points</h3> 
+ 
+        <ul> 
+        <li>Hardware refers to physical computer components.</li> 
+        <li>Software consists of programs and instructions.</li> 
+        <li>An algorithm is a step-by-step method for solving a problem.</li> 
+        <li>A flowchart represents steps using symbols.</li> 
+        <li>Programming languages are used to write instructions for computers.</li> 
+        </ul> 
+ 
+        <h3>🧠 Remember</h3> 
+ 
+        <div class="note-highlight"> 
+        Problem → Algorithm → Flowchart → Program → Output 
+        </div> 
+        `; 
+ 
+    } 
+ 
+    else { 
+ 
+        topicNotes = ` 
+        <h3>📌 Chapter Overview</h3> 
+ 
+        <p> 
+        This chapter is part of the selected Class ${classValue} 
+        ${boardValue} ${subjectName} syllabus. 
+        </p> 
+ 
+        <h3>⭐ Important Points</h3> 
+ 
+        <ul> 
+        <li>Understand the main concepts of the chapter.</li> 
+        <li>Learn important definitions and keywords.</li> 
+        <li>Study examples given for each concept.</li> 
+        <li>Practise textbook-based questions.</li> 
+        <li>Revise important points before examinations.</li> 
+        </ul> 
+ 
+        <h3>📝 Exam Revision</h3> 
+ 
+        <div class="note-highlight"> 
+        Read the chapter → understand concepts → learn key terms 
+        → practise questions → revise. 
+        </div> 
+        `; 
+ 
+    } 
+ 
+    return ` 
+ 
+    <button class="back-button" 
+            onclick="backToChapters()"> 
+    ← Back to Chapters 
+    </button> 
+ 
+    <h2>📚 ${chapter}</h2> 
+ 
+    <p> 
+    <strong>Class:</strong> ${classValue} 
+    &nbsp; | &nbsp; 
+    <strong>Board:</strong> ${boardValue} 
+    </p> 
+ 
+    <p> 
+    <strong>Subject:</strong> ${subjectName} 
+    </p> 
+ 
+    ${topicNotes} 
+ 
+    <h3>📖 Important Revision Points</h3> 
+ 
+    <ul> 
+    <li>Understand the concepts instead of memorising blindly.</li> 
+    <li>Learn important definitions.</li> 
+    <li>Practise examples and questions.</li> 
+    <li>Revise the chapter regularly.</li> 
+    </ul> 
+ 
+    <h3>🎯 Practice</h3> 
+ 
+    <p> 
+    After studying this chapter, go to 
+    <strong>Practice Questions</strong> in the Study Hub 
+    and test your understanding. 
+    </p> 
+ 
+    `; 
+ 
+} 
+ 
+ 
+/* ================================= 
+   BACK TO CHAPTERS 
+   ================================= */ 
+ 
+function backToChapters() { 
+ 
+    document.getElementById("notesArea").style.display = 
+        "none"; 
+ 
+    document.getElementById("chapterArea").style.display = 
+        "block"; 
+ 
+    document.getElementById("chapterArea").scrollIntoView({ 
+        behavior: "smooth" 
+    }); 
+ 
+} 
+ 
+ 
+/* ================================= 
+   PRACTICE SUBJECTS 
+   ================================= */ 
+ 
+function updatePracticeSubjects() { 
+ 
+    let className = 
+        document.getElementById("practiceClass").value; 
+ 
+    let subject = 
+        document.getElementById("practiceSubject"); 
+ 
+    subject.innerHTML = 
+        '<option value="">Select Subject</option>'; 
+ 
+    if (className !== "") { 
+ 
+        subject.innerHTML += 
+            '<option value="maths">Mathematics</option>'; 
+ 
+        subject.innerHTML += 
+            '<option value="science">Science</option>'; 
+ 
+        subject.innerHTML += 
+            '<option value="social">Social Science</option>'; 
+ 
+        subject.innerHTML += 
+            '<option value="english">English</option>'; 
+ 
+        subject.innerHTML += 
+            '<option value="computer">Computer</option>'; 
+ 
+    } 
+ 
+} 
+ 
+ 
+/* ================================= 
+   PRACTICE QUESTION DATABASE 
+   ================================= */ 
+ 
+const practiceQuestions = { 
+ 
+6: { 
+ 
+maths: { 
+ 
+easy: [ 
+ 
+[ 
+"What is 48 ÷ 6?", 
+["6","8","9","12"], 
+1 
+], 
+ 
+[ 
+"What is 25 + 37?", 
+["52","62","72","82"], 
+1 
+], 
+ 
+[ 
+"How many sides does a hexagon have?", 
+["5","6","7","8"], 
+1 
+], 
+ 
+[ 
+"What is 9 × 7?", 
+["54","63","72","81"], 
+1 
+], 
+ 
+[ 
+"What is half of 100?", 
+["25","40","50","60"], 
+2 
+] 
+ 
+], 
+ 
+medium: [ 
+ 
+[ 
+"What is 15²?", 
+["125","200","225","250"], 
+2 
+], 
+ 
+[ 
+"What is 3/4 of 20?", 
+["10","12","15","18"], 
+2 
+], 
+ 
+[ 
+"What is the perimeter of a square with side 8 cm?", 
+["16 cm","24 cm","32 cm","64 cm"], 
+2 
+], 
+ 
+[ 
+"What is 2,500 ÷ 50?", 
+["25","50","75","100"], 
+1 
+], 
+ 
+[ 
+"Which number is divisible by 9?", 
+["34","45","52","62"], 
+1 
+] 
+ 
+], 
+ 
+hard: [ 
+ 
+[ 
+"A number is 7 more than 3 times another number. If the result is 25, what is the other number?", 
+["5","6","7","8"], 
+1 
+], 
+ 
+[ 
+"A rectangle is 12 cm long and 7 cm wide. What is its area?", 
+["38 cm²","84 cm²","96 cm²","168 cm²"], 
+1 
+], 
+ 
+[ 
+"Find the next number: 3, 6, 12, 24, ?", 
+["30","36","42","48"], 
+3 
+], 
+ 
+[ 
+"What is the smallest number divisible by both 6 and 8?", 
+["12","18","24","48"], 
+2 
+], 
+ 
+[ 
+"If 5 pencils cost ₹40, what is the cost of 8 pencils?", 
+["₹56","₹64","₹72","₹80"], 
+1 
+] 
+ 
+] 
+ 
+}, 
+ 
+science: { 
+ 
+easy: [ 
+ 
+[ 
+"Which part of a plant usually makes food?", 
+["Root","Stem","Leaf","Flower"], 
+2 
+], 
+ 
+[ 
+"Which organ helps humans breathe?", 
+["Heart","Lungs","Stomach","Kidney"], 
+1 
+], 
+ 
+[ 
+"Which state of matter has a fixed shape?", 
+["Solid","Liquid","Gas","Plasma"], 
+0 
+], 
+ 
+[ 
+"Which source gives us sunlight?", 
+["Moon","Sun","Earth","Cloud"], 
+1 
+], 
+ 
+[ 
+"Water freezes at:", 
+["0°C","10°C","50°C","100°C"], 
+0 
+] 
+ 
+], 
+ 
+medium: [ 
+ 
+[ 
+"Which gas is most abundant in Earth's atmosphere?", 
+["Oxygen","Nitrogen","Carbon dioxide","Hydrogen"], 
+1 
+], 
+ 
+[ 
+"Water vapour changing into liquid water is called:", 
+["Evaporation","Condensation","Melting","Freezing"], 
+1 
+], 
+ 
+[ 
+"Which organ pumps blood around the body?", 
+["Lungs","Heart","Kidney","Brain"], 
+1 
+], 
+ 
+[ 
+"Which force pulls objects towards Earth?", 
+["Friction","Magnetism","Gravity","Electricity"], 
+2 
+], 
+ 
+[ 
+"Which material is attracted strongly by a magnet?", 
+["Wood","Plastic","Iron","Glass"], 
+2 
+] 
+ 
+], 
+ 
+hard: [ 
+ 
+[ 
+"Which process allows green plants to make food using sunlight?", 
+["Respiration","Photosynthesis","Digestion","Transpiration"], 
+1 
+], 
+ 
+[ 
+"Which change is reversible?", 
+["Burning paper","Melting ice","Cooking food","Rusting iron"], 
+1 
+], 
+ 
+[ 
+"Why does a shadow form?", 
+["Light bends around objects","An object blocks light","Objects produce darkness","Air absorbs light"], 
+1 
+], 
+ 
+[ 
+"Which part of the plant absorbs most water from soil?", 
+["Flower","Leaf","Roots","Fruit"], 
+2 
+], 
+ 
+[ 
+"Which simple machine is a sloping surface?", 
+["Lever","Pulley","Inclined plane","Wheel"], 
+2 
+] 
+ 
+] 
+ 
+} 
+ 
+}, 
+ 
+7: { 
+ 
+maths: { 
+ 
+easy: [ 
+ 
+[ 
+"What is 7 × 8?", 
+["48","54","56","64"], 
+2 
+], 
+ 
+[ 
+"What is 1000 ÷ 25?", 
+["20","30","40","50"], 
+2 
+], 
+ 
+[ 
+"What is 15 + 28?", 
+["33","43","53","63"], 
+1 
+], 
+ 
+[ 
+"What is 3²?", 
+["6","9","12","15"], 
+1 
+], 
+ 
+[ 
+"Which is the smallest prime number?", 
+["0","1","2","3"], 
+2 
+] 
+ 
+], 
+ 
+medium: [ 
+ 
+[ 
+"What is 15% of 200?", 
+["15","20","30","40"], 
+2 
+], 
+ 
+[ 
+"If 3x = 27, what is x?", 
+["6","7","8","9"], 
+3 
+], 
+ 
+[ 
+"What is the perimeter of a square with side 9 cm?", 
+["18 cm","27 cm","36 cm","81 cm"], 
+2 
+], 
+ 
+[ 
+"What is 2/5 of 50?", 
+["10","15","20","25"], 
+2 
+], 
+ 
+[ 
+"What is the value of 4³?", 
+["12","16","64","81"], 
+2 
+] 
+ 
+], 
+ 
+hard: [ 
+ 
+[ 
+"If 5x - 10 = 40, what is x?", 
+["8","9","10","12"], 
+2 
+], 
+ 
+[ 
+"A number is doubled and 5 is added. The result is 25. What is the number?", 
+["8","10","12","15"], 
+1 
+], 
+ 
+[ 
+"What is the next number: 5, 10, 20, 40, ?", 
+["50","60","70","80"], 
+3 
+], 
+ 
+[ 
+"If 3 pencils cost ₹18, what do 7 pencils cost?", 
+["₹36","₹42","₹48","₹54"], 
+1 
+], 
+ 
+[ 
+"What is the LCM of 6 and 8?", 
+["12","18","24","48"], 
+2 
+] 
+ 
+] 
+ 
+}, 
+ 
+science: { 
+ 
+easy: [ 
+ 
+[ 
+"Which organ helps us breathe?", 
+["Heart","Lungs","Stomach","Kidney"], 
+1 
+], 
+ 
+[ 
+"Which gas do humans need for respiration?", 
+["Oxygen","Carbon dioxide","Hydrogen","Nitrogen"], 
+0 
+], 
+ 
+[ 
+"Which organ pumps blood?", 
+["Brain","Heart","Lungs","Liver"], 
+1 
+], 
+ 
+[ 
+"Plants prepare food mainly in their:", 
+["Roots","Leaves","Flowers","Fruits"], 
+1 
+], 
+ 
+[ 
+"Which force pulls objects towards Earth?", 
+["Friction","Gravity","Sound","Light"], 
+1 
+] 
+ 
+], 
+ 
+medium: [ 
+ 
+[ 
+"Which blood cells help fight infections?", 
+["Red blood cells","White blood cells","Platelets","Plasma"], 
+1 
+], 
+ 
+[ 
+"Plants lose water vapour through their leaves by:", 
+["Respiration","Transpiration","Digestion","Germination"], 
+1 
+], 
+ 
+[ 
+"Which layer contains most of Earth's weather?", 
+["Troposphere","Stratosphere","Mesosphere","Thermosphere"], 
+0 
+], 
+ 
+[ 
+"Which instrument measures temperature?", 
+["Barometer","Thermometer","Ammeter","Voltmeter"], 
+1 
+], 
+ 
+[ 
+"Which substance is needed for burning?", 
+["Oxygen","Nitrogen","Carbon dioxide","Helium"], 
+0 
+] 
+ 
+], 
+ 
+hard: [ 
+ 
+[ 
+"Which process separates insoluble solid particles from a liquid?", 
+["Filtration","Evaporation","Condensation","Melting"], 
+0 
+], 
+ 
+[ 
+"Which part of a cell controls most cell activities?", 
+["Cell wall","Nucleus","Cytoplasm","Vacuole"], 
+1 
+], 
+ 
+[ 
+"Which type of energy is stored in food?", 
+["Chemical energy","Sound energy","Light energy","Nuclear energy"], 
+0 
+], 
+ 
+[ 
+"Which instrument is used to measure atmospheric pressure?", 
+["Thermometer","Barometer","Ammeter","Hygrometer"], 
+1 
+], 
+ 
+[ 
+"Which change produces a new substance?", 
+["Melting","Freezing","Rusting","Boiling"], 
+2 
+] 
+ 
+] 
+ 
+} 
+ 
+}, 
+ 
+8: { 
+ 
+maths: { 
+ 
+easy: [ 
+ 
+[ 
+"What is 12 × 9?", 
+["98","108","118","128"], 
+1 
+], 
+ 
+[ 
+"What is √144?", 
+["10","11","12","14"], 
+2 
+], 
+ 
+[ 
+"How many degrees are in a straight angle?", 
+["90°","120°","180°","360°"], 
+2 
+], 
+ 
+[ 
+"What is 25% of 100?", 
+["10","20","25","50"], 
+2 
+], 
+ 
+[ 
+"What is 5²?", 
+["10","15","20","25"], 
+3 
+] 
+ 
+], 
+ 
+medium: [ 
+ 
+[ 
+"What is 3² + 4²?", 
+["12","20","25","49"], 
+2 
+], 
+ 
+[ 
+"If 2x + 5 = 17, what is x?", 
+["5","6","7","8"], 
+1 
+], 
+ 
+[ 
+"What is the probability of getting a head with a fair coin?", 
+["0","1/4","1/2","1"], 
+2 
+], 
+ 
+[ 
+"What is the area of a rectangle 10 cm by 5 cm?", 
+["15 cm²","30 cm²","50 cm²","100 cm²"], 
+2 
+], 
+ 
+[ 
+"What is 2⁵?", 
+["10","16","25","32"], 
+3 
+] 
+ 
+], 
+ 
+hard: [ 
+ 
+[ 
+"If 4x - 9 = 27, what is x?", 
+["7","8","9","10"], 
+1 
+], 
+ 
+[ 
+"A train travels 240 km in 4 hours. What is its average speed?", 
+["40 km/h","50 km/h","60 km/h","80 km/h"], 
+2 
+], 
+ 
+[ 
+"Find the next number: 2, 5, 11, 23, 47, ?", 
+["71","83","95","97"], 
+2 
+], 
+ 
+[ 
+"The angles of a triangle are in the ratio 2:3:4. What is the largest angle?", 
+["60°","70°","80°","90°"], 
+2 
+], 
+ 
+[ 
+"What is the square of 15?", 
+["125","200","225","250"], 
+2 
+] 
+ 
+] 
+ 
+}, 
+ 
+science: { 
+ 
+easy: [ 
+ 
+[ 
+"Which gas is essential for humans to breathe?", 
+["Carbon dioxide","Oxygen","Nitrogen","Hydrogen"], 
+1 
+], 
+ 
+[ 
+"Which organ pumps blood?", 
+["Brain","Heart","Lungs","Kidney"], 
+1 
+], 
+ 
+[ 
+"Which is a source of renewable energy?", 
+["Coal","Petrol","Solar energy","Natural gas"], 
+2 
+], 
+ 
+[ 
+"Which part of a plant carries water upward?", 
+["Xylem","Phloem","Flower","Fruit"], 
+0 
+], 
+ 
+[ 
+"Which force opposes motion between surfaces?", 
+["Gravity","Friction","Magnetism","Buoyancy"], 
+1 
+] 
+ 
+], 
+ 
+medium: [ 
+ 
+[ 
+"Which blood vessel carries blood away from the heart?", 
+["Vein","Artery","Capillary","Nerve"], 
+1 
+], 
+ 
+[ 
+"Which instrument measures atmospheric pressure?", 
+["Thermometer","Barometer","Ammeter","Hygrometer"], 
+1 
+], 
+ 
+[ 
+"Which law states that every action has an equal and opposite reaction?", 
+["Newton's First Law","Newton's Second Law","Newton's Third Law","Law of Gravitation"], 
+2 
+], 
+ 
+[ 
+"Which organelle is known as the powerhouse of the cell?", 
+["Nucleus","Ribosome","Mitochondria","Vacuole"], 
+2 
+], 
+ 
+[ 
+"Which form of energy is associated with moving objects?", 
+["Potential","Kinetic","Chemical","Nuclear"], 
+1 
+] 
+ 
+], 
+ 
+hard: [ 
+ 
+[ 
+"A car travels 150 km in 3 hours. What is its average speed?", 
+["30 km/h","40 km/h","50 km/h","60 km/h"], 
+2 
+], 
+ 
+[ 
+"Which phenomenon explains the splitting of white light into colours?", 
+["Reflection","Refraction","Dispersion","Absorption"], 
+2 
+], 
+ 
+[ 
+"Which particle has a negative electric charge?", 
+["Proton","Neutron","Electron","Nucleus"], 
+2 
+], 
+ 
+[ 
+"Which gas is mainly responsible for photosynthesis?", 
+["Oxygen","Nitrogen","Carbon dioxide","Hydrogen"], 
+2 
+], 
+ 
+[ 
+"Which change is a chemical change?", 
+["Melting ice","Breaking glass","Rusting iron","Boiling water"], 
+2 
+] 
+ 
+] 
+ 
+} 
+ 
+}, 
+ 
+9: { 
+ 
+maths: { 
+ 
+easy: [ 
+ 
+[ 
+"What is 15 × 6?", 
+["80","90","100","120"], 
+1 
+], 
+ 
+[ 
+"What is 2³?", 
+["4","6","8","9"], 
+2 
+], 
+ 
+[ 
+"What is √81?", 
+["7","8","9","10"], 
+2 
+], 
+ 
+[ 
+"What is 20% of 50?", 
+["5","10","15","20"], 
+1 
+], 
+ 
+[ 
+"What is 12²?", 
+["124","134","144","154"], 
+2 
+] 
+ 
+], 
+ 
+medium: [ 
+ 
+[ 
+"If 3x + 4 = 19, what is x?", 
+["3","4","5","6"], 
+2 
+], 
+ 
+[ 
+"What is the sum of the angles of a quadrilateral?", 
+["180°","270°","360°","540°"], 
+2 
+], 
+ 
+[ 
+"What is the HCF of 24 and 36?", 
+["6","8","12","18"], 
+2 
+], 
+ 
+[ 
+"What is the probability of getting an even number on a fair die?", 
+["1/6","1/3","1/2","2/3"], 
+2 
+], 
+ 
+[ 
+"What is the value of 5² - 3²?", 
+["12","16","20","25"], 
+0 
+] 
+ 
+], 
+ 
+hard: [ 
+ 
+[ 
+"If x² - 9 = 0, which values can x have?", 
+["3 only","-3 only","3 or -3","9 or -9"], 
+2 
+], 
+ 
+[ 
+"A body travels 20 m in 4 seconds. What is its average speed?", 
+["4 m/s","5 m/s","6 m/s","8 m/s"], 
+1 
+], 
+ 
+[ 
+"For parallel lines cut by a transversal, corresponding angles are:", 
+["Always unequal","Equal","Always 90°","Always supplementary"], 
+1 
+], 
+ 
+[ 
+"Find the next number: 4, 9, 19, 39, 79, ?", 
+["119","139","159","169"], 
+2 
+], 
+ 
+[ 
+"If x + 5 = 12, what is x?", 
+["5","6","7","8"], 
+2 
+] 
+ 
+] 
+ 
+}, 
+ 
+science: { 
+ 
+easy: [ 
+ 
+[ 
+"What is the SI unit of force?", 
+["Joule","Watt","Newton","Pascal"], 
+2 
+], 
+ 
+[ 
+"Which organelle is known as the powerhouse of the cell?", 
+["Nucleus","Ribosome","Mitochondria","Vacuole"], 
+2 
+], 
+ 
+[ 
+"Which gas is released during photosynthesis?", 
+["Nitrogen","Oxygen","Hydrogen","Carbon dioxide"], 
+1 
+], 
+ 
+[ 
+"Which tissue transports water in plants?", 
+["Phloem","Xylem","Epidermis","Parenchyma"], 
+1 
+], 
+ 
+[ 
+"Which organ filters waste from blood?", 
+["Heart","Kidney","Lung","Stomach"], 
+1 
+] 
+ 
+], 
+ 
+medium: [ 
+ 
+[ 
+"What is the acceleration of an object moving at constant velocity?", 
+["0","1 m/s²","9.8 m/s²","10 m/s²"], 
+0 
+], 
+ 
+[ 
+"Which tissue transports food in plants?", 
+["Xylem","Phloem","Epidermis","Collenchyma"], 
+1 
+], 
+ 
+[ 
+"Which component of blood helps in clotting?", 
+["Red blood cells","White blood cells","Platelets","Plasma"], 
+2 
+], 
+ 
+[ 
+"Which acid is present in the stomach?", 
+["Hydrochloric acid","Sulfuric acid","Nitric acid","Acetic acid"], 
+0 
+], 
+ 
+[ 
+"Which part of the brain controls balance and posture?", 
+["Cerebrum","Cerebellum","Medulla","Hypothalamus"], 
+1 
+] 
+ 
+], 
+ 
+hard: [ 
+ 
+[ 
+"Which is a chemical change?", 
+["Melting ice","Breaking glass","Rusting iron","Boiling water"], 
+2 
+], 
+ 
+[ 
+"Which mirror is commonly used as a rear-view mirror in vehicles?", 
+["Plane mirror","Concave mirror","Convex mirror","Cylindrical mirror"], 
+2 
+], 
+ 
+[ 
+"A body has mass 5 kg and acceleration 4 m/s². What force acts on it?", 
+["9 N","20 N","25 N","40 N"], 
+1 
+], 
+ 
+[ 
+"Which law explains that force equals mass multiplied by acceleration?", 
+["Newton's First Law","Newton's Second Law","Newton's Third Law","Law of Gravitation"], 
+1 
+], 
+ 
+[ 
+"Which particle determines the atomic number of an element?", 
+["Electron","Neutron","Proton","Photon"], 
+2 
+] 
+ 
+] 
+ 
+} 
+ 
+}, 
+ 
+10: { 
+ 
+maths: { 
+ 
+easy: [ 
+ 
+[ 
+"What is the value of √81?", 
+["7","8","9","10"], 
+2 
+], 
+ 
+[ 
+"What is the degree of a quadratic polynomial?", 
+["1","2","3","4"], 
+1 
+], 
+ 
+[ 
+"What is 12 × 12?", 
+["124","134","144","154"], 
+2 
+], 
+ 
+[ 
+"What is 50% of 80?", 
+["20","30","40","50"], 
+2 
+], 
+ 
+[ 
+"What is the HCF of 24 and 36?", 
+["6","8","12","18"], 
+2 
+] 
+ 
+], 
+ 
+medium: [ 
+ 
+[ 
+"If 2x + 3 = 13, what is x?", 
+["4","5","6","7"], 
+1 
+], 
+ 
+[ 
+"What is the probability of getting a 6 when a fair die is thrown?", 
+["1/2","1/3","1/6","1/12"], 
+2 
+], 
+ 
+[ 
+"What is the 10th term of an AP with first term 3 and common difference 4?", 
+["35","39","43","47"], 
+1 
+], 
+ 
+[ 
+"The roots of x² - 5x + 6 are:", 
+["1 and 6","2 and 3","-2 and -3","3 and 4"], 
+1 
+], 
+ 
+[ 
+"What is the value of 3² + 4²?", 
+["12","20","25","49"], 
+2 
+] 
+ 
+], 
+ 
+hard: [ 
+ 
+[ 
+"If x + 1/x = 5, what is x² + 1/x²?", 
+["21","23","25","27"], 
+1 
+], 
+ 
+[ 
+"If the first term of an AP is 3 and common difference is 4, what is the 10th term?", 
+["35","39","43","47"], 
+1 
+], 
+ 
+[ 
+"What is the distance between the points (0,0) and (3,4)?", 
+["3","4","5","7"], 
+2 
+], 
+ 
+[ 
+"If x² - 5x + 6 = 0, what is the sum of the roots?", 
+["2","3","5","6"], 
+2 
+], 
+ 
+[ 
+"What is the probability of getting exactly one head when two fair coins are tossed?", 
+["1/4","1/2","3/4","1"], 
+1 
+] 
+ 
+] 
+ 
+}, 
+ 
+science: { 
+ 
+easy: [ 
+ 
+[ 
+"What is the SI unit of electric current?", 
+["Volt","Ohm","Ampere","Watt"], 
+2 
+], 
+ 
+[ 
+"Which gas is released during photosynthesis?", 
+["Nitrogen","Oxygen","Hydrogen","Carbon dioxide"], 
+1 
+], 
+ 
+[ 
+"Which organ filters waste from the blood?", 
+["Heart","Kidney","Lung","Stomach"], 
+1 
+], 
+ 
+[ 
+"Which mirror is used as a rear-view mirror?", 
+["Plane","Concave","Convex","Cylindrical"], 
+2 
+], 
+ 
+[ 
+"Which part of a cell contains genetic material?", 
+["Nucleus","Cell wall","Vacuole","Cytoplasm"], 
+0 
+] 
+ 
+], 
+ 
+medium: [ 
+ 
+[ 
+"Which part of the brain controls balance and posture?", 
+["Cerebrum","Cerebellum","Medulla","Hypothalamus"], 
+1 
+], 
+ 
+[ 
+"Which type of reaction involves exchange of ions between compounds?", 
+["Combination","Decomposition","Double displacement","Combustion"], 
+2 
+], 
+ 
+[ 
+"Which lens is used to correct myopia?", 
+["Convex lens","Concave lens","Cylindrical lens","Plane glass"], 
+1 
+], 
+ 
+[ 
+"Which component carries oxygen in blood?", 
+["Platelets","Haemoglobin","Plasma","White blood cells"], 
+1 
+], 
+ 
+[ 
+"Which unit is used for electrical resistance?", 
+["Volt","Ampere","Ohm","Watt"], 
+2 
+] 
+ 
+], 
+ 
+hard: [ 
+ 
+[ 
+"A body has mass 5 kg and acceleration 4 m/s². What force acts on it?", 
+["9 N","20 N","25 N","40 N"], 
+1 
+], 
+ 
+[ 
+"Which mirror can form a magnified upright image when the object is close to it?", 
+["Plane mirror","Concave mirror","Convex mirror","None"], 
+1 
+], 
+ 
+[ 
+"Which phenomenon causes the apparent bending of a pencil in water?", 
+["Reflection","Refraction","Dispersion","Diffraction"], 
+1 
+], 
+ 
+[ 
+"Which substance is oxidised in the reaction Zn + CuSO₄ → ZnSO₄ + Cu?", 
+["Zn","Cu","SO₄","CuSO₄"], 
+0 
+], 
+ 
+[ 
+"Which quantity is measured in joules?", 
+["Force","Energy","Power","Current"], 
+1 
+] 
+ 
+] 
+ 
+} 
+ 
+} 
+ 
+}; 
+ 
+ 
+/* ================================= 
+   PRACTICE VARIABLES 
+   ================================= */ 
+ 
+let practiceQuestionsList = []; 
+let practiceCurrentQuestion = 0; 
+let practiceScore = 0; 
+let practiceClass = ""; 
+let practiceBoard = ""; 
+let practiceSubject = ""; 
+let practiceDifficulty = ""; 
+ 
+ 
+/* ================================= 
+   GET PRACTICE QUESTIONS 
+   ================================= */ 
+ 
+function getPracticeQuestions() { 
+ 
+    let subjectData = 
+        practiceQuestions[practiceClass][practiceSubject]; 
+ 
+    if (!subjectData) { 
+        return []; 
+    } 
+ 
+    if (practiceDifficulty === "mixed") { 
+ 
+        let all = []; 
+ 
+        ["easy","medium","hard"].forEach(function(level) { 
+ 
+            if (subjectData[level]) { 
+ 
+                subjectData[level].forEach(function(q) { 
+                    all.push(q); 
+                }); 
+ 
+            } 
+ 
+        }); 
+ 
+        all.sort(function() { 
+            return Math.random() - 0.5; 
+        }); 
+ 
+        return all.slice(0,10); 
+ 
+    } 
+ 
+    return subjectData[practiceDifficulty] || []; 
+ 
+} 
+ 
+ 
+/* ================================= 
+   START PRACTICE 
+   ================================= */ 
+ 
+function startPractice() { 
+ 
+    practiceClass = 
+        document.getElementById("practiceClass").value; 
+ 
+    practiceBoard = 
+        document.getElementById("practiceBoard").value; 
+ 
+    practiceSubject = 
+        document.getElementById("practiceSubject").value; 
+ 
+    practiceDifficulty = 
+        document.getElementById("practiceDifficulty").value; 
+ 
+ 
+    if ( 
+        practiceClass === "" || 
+        practiceBoard === "" || 
+        practiceSubject === "" || 
+        practiceDifficulty === "" 
+    ) { 
+ 
+        alert( 
+            "Please select Class, Board, Subject and Difficulty." 
+        ); 
+ 
+        return; 
+    } 
+ 
+ 
+    practiceQuestionsList = 
+        getPracticeQuestions(); 
+ 
+ 
+    if (practiceQuestionsList.length === 0) { 
+ 
+        alert( 
+            "Questions for this selection will be added soon." 
+        ); 
+ 
+        return; 
+    } 
+ 
+ 
+    practiceCurrentQuestion = 0; 
+ 
+    practiceScore = 0; 
+ 
+ 
+    document.getElementById("practiceGame").style.display = 
+        "block"; 
+ 
+ 
+    document.getElementById("practiceTitle").innerHTML = 
+        "📝 Class " + 
+        practiceClass + 
+        " " + 
+        practiceSubject.toUpperCase() + 
+        " Practice"; 
+ 
+ 
+    document.getElementById("practiceGame").scrollIntoView({ 
+        behavior: "smooth" 
+    }); 
+ 
+ 
+    showPracticeQuestion(); 
+ 
+} 
+ 
+ 
+/* ================================= 
+   SHOW PRACTICE QUESTION 
+   ================================= */ 
+ 
+function showPracticeQuestion() { 
+ 
+    let q = 
+        practiceQuestionsList[practiceCurrentQuestion]; 
+ 
+ 
+    document.getElementById("practiceProgress").innerHTML = 
+        "Question " + 
+        (practiceCurrentQuestion + 1) + 
+        " of " + 
+        practiceQuestionsList.length; 
+ 
+ 
+    document.getElementById("practiceQuestion").innerHTML = 
+        q[0]; 
+ 
+ 
+    let optionsHTML = ""; 
+ 
+ 
+    q[1].forEach(function(option,index) { 
+ 
+        optionsHTML += 
+            '<button class="option-button" ' + 
+            'onclick="checkPracticeAnswer(' + 
+            index + 
+            ')">' + 
+            option + 
+            '</button>'; 
+ 
+    }); 
+ 
+ 
+    document.getElementById("practiceOptions").innerHTML = 
+        optionsHTML; 
+ 
+ 
+    document.getElementById("practiceScore").innerHTML = 
+        "🏆 Score: " + 
+        practiceScore; 
+ 
+ 
+    document.getElementById("practiceResultBox").innerHTML = 
+        ""; 
+ 
+} 
+ 
+ 
+/* ================================= 
+   CHECK PRACTICE ANSWER 
+   ================================= */ 
+ 
+function checkPracticeAnswer(selectedAnswer) { 
+ 
+    let q = 
+        practiceQuestionsList[practiceCurrentQuestion]; 
+ 
+    let correctAnswer = 
+        q[2]; 
+ 
+    let buttons = 
+        document.querySelectorAll( 
+            "#practiceOptions .option-button" 
+        ); 
+ 
+    buttons.forEach(function(button) { 
+ 
+        button.disabled = true; 
+ 
+    }); 
+ 
+ 
+    if (selectedAnswer === correctAnswer) { 
+ 
+        practiceScore++; 
+ 
+        buttons[selectedAnswer] 
+            .classList.add("correct"); 
+ 
+    } else { 
+ 
+        buttons[selectedAnswer] 
+            .classList.add("wrong"); 
+ 
+        buttons[correctAnswer] 
+            .classList.add("correct"); 
+ 
+    } 
+ 
+ 
+    document.getElementById("practiceScore").innerHTML = 
+        "🏆 Score: " + 
+        practiceScore; 
+ 
+ 
+    setTimeout(function() { 
+ 
+        practiceCurrentQuestion++; 
+ 
+        if ( 
+            practiceCurrentQuestion < 
+            practiceQuestionsList.length 
+        ) { 
+ 
+            showPracticeQuestion(); 
+ 
+        } else { 
+ 
+            showPracticeResult(); 
+ 
+        } 
+ 
+    },900); 
+ 
+} 
+ 
+ 
+/* ================================= 
+   PRACTICE RESULT 
+   ================================= */ 
+ 
+function showPracticeResult() { 
+ 
+    let total = 
+        practiceQuestionsList.length; 
+ 
+    let percentage = 
+        Math.round( 
+            (practiceScore / total) * 100 
+        ); 
+ 
+ 
+    document.getElementById("practiceProgress").innerHTML = 
+        "Practice Completed 🎉"; 
+ 
+ 
+    document.getElementById("practiceQuestion").innerHTML = 
+        "🎉 WELL DONE!"; 
+ 
+ 
+    document.getElementById("practiceOptions").innerHTML = 
+        ""; 
+ 
+ 
+    document.getElementById("practiceScore").innerHTML = 
+        "🏆 Score: " + 
+        practiceScore + 
+        " / " + 
+        total; 
+ 
+ 
+    document.getElementById("practiceResultBox").innerHTML = 
+ 
+        "<h2>📊 Practice Result</h2>" + 
+ 
+        "<p><strong>Class:</strong> " + 
+        practiceClass + 
+        "</p>" + 
+ 
+        "<p><strong>Board:</strong> " + 
+        practiceBoard + 
+        "</p>" + 
+ 
+        "<p><strong>Subject:</strong> " + 
+        practiceSubject.toUpperCase() + 
+        "</p>" + 
+ 
+        "<p><strong>Difficulty:</strong> " + 
+        practiceDifficulty.toUpperCase() + 
+        "</p>" + 
+ 
+        "<p><strong>Score:</strong> " + 
+        practiceScore + 
+        " / " + 
+        total + 
+        "</p>" + 
+ 
+        "<p><strong>Percentage:</strong> " + 
+        percentage + 
+        "%</p>" + 
+ 
+        '<button onclick="restartPractice()">' + 
+        "🔄 Try Again" + 
+        "</button>" + 
+ 
+        '<button onclick="chooseAnotherPractice()">' + 
+        "📚 Choose Another Practice" + 
+        "</button>"; 
+ 
+} 
+ 
+ 
+/* ================================= 
+   RESTART PRACTICE 
+   ================================= */ 
+ 
+function restartPractice() { 
+ 
+    practiceCurrentQuestion = 0; 
+ 
+    practiceScore = 0; 
+ 
+    practiceQuestionsList = 
+        getPracticeQuestions(); 
+ 
+    showPracticeQuestion(); 
+ 
+} 
+ 
+ 
+/* ================================= 
+   CHOOSE ANOTHER PRACTICE 
+   ================================= */ 
+ 
+function chooseAnotherPractice() { 
+ 
+    document.getElementById("practiceGame").style.display = 
+        "none"; 
+ 
+    document.getElementById("practiceHub").style.display = 
+        "block"; 
+ 
+    document.getElementById("practiceHub").scrollIntoView({ 
+        behavior: "smooth" 
+    }); 
+ 
+} 
+ 
+ 
+/* ================================= 
+   QUIZ VARIABLES 
+   ================================= */ 
+ 
+let selectedClass = ""; 
+let currentLevel = ""; 
+let currentQuestion = 0; 
+let score = 0; 
+ 
+ 
+/* ================================= 
+   QUIZ QUESTIONS 
+   ================================= */ 
+ 
+const quizQuestions = { 
+ 
+6: { 
+ 
+easy: [ 
+["What is 48 ÷ 6?",["6","8","9","12"],1], 
+["Which part of a plant makes food?",["Root","Stem","Leaf","Flower"],2], 
+["How many sides does a hexagon have?",["5","6","7","8"],1], 
+["Which is the largest planet?",["Earth","Mars","Jupiter","Venus"],2], 
+["1 kilometre is equal to:",["100 m","500 m","1,000 m","10,000 m"],2] 
+], 
+ 
+medium: [ 
+["What is 15²?",["30","125","225","250"],2], 
+["Which layer of Earth do we live on?",["Core","Mantle","Crust","Inner Core"],2], 
+["Which fraction is equivalent to 1/2?",["2/3","3/6","4/6","5/8"],1], 
+["Which gas is most abundant in Earth's atmosphere?",["Oxygen","Nitrogen","Carbon dioxide","Hydrogen"],1], 
+["A triangle with three equal sides is called:",["Scalene","Isosceles","Equilateral","Right-angled"],2] 
+], 
+ 
+hard: [ 
+["A number is 7 more than 3 times another number. If it is 25, what is the other number?",["5","6","7","8"],1], 
+["A rectangle is 12 cm long and 7 cm wide. What is its area?",["38 cm²","84 cm²","96 cm²","168 cm²"],1], 
+["Water vapour changing into liquid water is called:",["Evaporation","Condensation","Freezing","Melting"],1], 
+["What is the angle between the hands of a clock at 3:00?",["45°","60°","90°","180°"],2], 
+["Find the next number: 3, 6, 12, 24, ?",["30","36","42","48"],3] 
+] 
+ 
+}, 
+ 
+7: { 
+ 
+easy: [ 
+["What is 7 × 8?",["48","54","56","64"],2], 
+["Which is the smallest prime number?",["0","1","2","3"],2], 
+["Which organ helps us breathe?",["Heart","Lungs","Stomach","Kidney"],1], 
+["India is part of which continent?",["Europe","Africa","Asia","Australia"],2], 
+["What is 1000 ÷ 25?",["20","30","40","50"],2] 
+], 
+ 
+medium: [ 
+["What is 15% of 200?",["15","20","30","40"],2], 
+["Which blood cells help fight infections?",["Red blood cells","White blood cells","Platelets","Plasma"],1], 
+["If 3x = 27, what is x?",["6","7","8","9"],3], 
+["Which layer contains most of Earth's weather?",["Troposphere","Stratosphere","Mesosphere","Thermosphere"],0], 
+["What is the perimeter of a square with side 9 cm?",["18 cm","27 cm","36 cm","81 cm"],2] 
+], 
+ 
+hard: [ 
+["If 5x - 10 = 40, what is x?",["8","9","10","12"],2], 
+["A number is doubled and 5 is added. The result is 25. What is the number?",["8","10","12","15"],1], 
+["What is the next number: 5, 10, 20, 40, ?",["50","60","70","80"],3], 
+["Plants lose water vapour through their leaves by:",["Respiration","Transpiration","Digestion","Germination"],1], 
+["A triangle has sides 5 cm, 5 cm and 8 cm. It is:",["Scalene","Equilateral","Isosceles","Right-angled"],2] 
+] 
+ 
+}, 
+ 
+8: { 
+ 
+easy: [ 
+["What is 12 × 9?",["98","108","118","128"],1], 
+["Which gas is essential for humans to breathe?",["Carbon dioxide","Oxygen","Nitrogen","Hydrogen"],1], 
+["What is √144?",["10","11","12","14"],2], 
+["Which is the largest ocean?",["Atlantic","Indian","Arctic","Pacific"],3], 
+["How many degrees are in a straight angle?",["90°","120°","180°","360°"],2] 
+], 
+ 
+medium: [ 
+["What is 3² + 4²?",["12","20","25","49"],2], 
+["Which blood vessel carries blood away from the heart?",["Vein","Artery","Capillary","Nerve"],1], 
+["If 2x + 5 = 17, what is x?",["5","6","7","8"],1], 
+["Which instrument measures atmospheric pressure?",["Thermometer","Barometer","Ammeter","Hygrometer"],1], 
+["What is the probability of getting a head with a fair coin?",["0","1/4","1/2","1"],2] 
+], 
+ 
+hard: [ 
+["If 4x - 9 = 27, what is x?",["7","8","9","10"],1], 
+["A train travels 240 km in 4 hours. What is its average speed?",["40 km/h","50 km/h","60 km/h","80 km/h"],2], 
+["Find the next number: 2, 5, 11, 23, 47, ?",["71","83","95","97"],2], 
+["Which law states that every action has an equal and opposite reaction?",["Newton's First Law","Newton's Second Law","Newton's Third Law","Law of Gravitation"],2], 
+["The angles of a triangle are in the ratio 2:3:4. What is the largest angle?",["60°","70°","80°","90°"],2] 
+] 
+ 
+}, 
+ 
+9: { 
+ 
+easy: [ 
+["What is 15 × 6?",["80","90","100","120"],1], 
+["What is the SI unit of force?",["Joule","Watt","Newton","Pascal"],2], 
+["Which number is irrational?",["1/2","3","√2","0.25"],2], 
+["Which organelle is known as the powerhouse of the cell?",["Nucleus","Ribosome","Mitochondria","Vacuole"],2], 
+["What is 2³?",["4","6","8","9"],2] 
+], 
+ 
+medium: [ 
+["If 3x + 4 = 19, what is x?",["3","4","5","6"],2], 
+["What is the acceleration of an object moving at constant velocity?",["0","1 m/s²","9.8 m/s²","10 m/s²"],0], 
+["Which tissue transports water in plants?",["Phloem","Xylem","Epidermis","Parenchyma"],1], 
+["What is the sum of the angles of a quadrilateral?",["180°","270°","360°","540°"],2], 
+["Which constitutional body conducts elections in India?",["Supreme Court","Election Commission of India","Parliament","Finance Commission"],1] 
+], 
+ 
+hard: [ 
+["If x² - 9 = 0, which values can x have?",["3 only","-3 only","3 or -3","9 or -9"],2], 
+["A body travels 20 m in 4 seconds. What is its average speed?",["4 m/s","5 m/s","6 m/s","8 m/s"],1], 
+["Which is a chemical change?",["Melting ice","Breaking glass","Rusting iron","Boiling water"],2], 
+["For parallel lines cut by a transversal, corresponding angles are:",["Always unequal","Equal","Always 90°","Always supplementary"],1], 
+["Find the next number: 4, 9, 19, 39, 79, ?",["119","139","159","169"],2] 
+] 
+ 
+}, 
+ 
+10: { 
+ 
+easy: [ 
+["What is the value of √81?",["7","8","9","10"],2], 
+["Which gas is released during photosynthesis?",["Nitrogen","Oxygen","Hydrogen","Carbon dioxide"],1], 
+["What is the degree of a quadratic polynomial?",["1","2","3","4"],1], 
+["What is the SI unit of electric current?",["Volt","Ohm","Ampere","Watt"],2], 
+["Which organ filters waste from the blood?",["Heart","Kidney","Lung","Stomach"],1] 
+], 
+ 
+medium: [ 
+["If 2x + 3 = 13, what is x?",["4","5","6","7"],1], 
+["What is the HCF of 24 and 36?",["6","8","12","18"],2], 
+["Which part of the brain controls balance and posture?",["Cerebrum","Cerebellum","Medulla","Hypothalamus"],1], 
+["What is the probability of getting a 6 when a fair die is thrown?",["1/2","1/3","1/6","1/12"],2], 
+["The distance travelled by light in one year is called:",["Light year","Kilometre","Astronomical unit","Parsec"],0] 
+], 
+ 
+hard: [ 
+["If x + 1/x = 5, what is x² + 1/x²?",["21","23","25","27"],1], 
+["The roots of x² - 5x + 6 are:",["1 and 6","2 and 3","-2 and -3","3 and 4"],1], 
+["A body has mass 5 kg and acceleration 4 m/s². What force acts on it?",["9 N","20 N","25 N","40 N"],1], 
+["Which mirror is commonly used as a rear-view mirror in vehicles?",["Plane mirror","Concave mirror","Convex mirror","Cylindrical mirror"],2], 
+["If the first term of an AP is 3 and common difference is 4, what is the 10th term?",["35","39","43","47"],1] 
+] 
+ 
+}, 
+ 
+"11+": { 
+ 
+easy: [ 
+["What is the derivative of x²?",["x","2x","x²","2"],1], 
+["What is the SI unit of energy?",["Newton","Joule","Watt","Pascal"],1], 
+["What is the atomic number of carbon?",["4","6","8","12"],1], 
+["Which organelle contains genetic material?",["Nucleus","Ribosome","Vacuole","Golgi body"],0], 
+["What is sin 90°?",["0","1/2","1","√3/2"],2] 
+], 
+ 
+medium: [ 
+["What is the derivative of 3x² + 2x?",["3x + 2","6x + 2","6x","3x²"],1], 
+["What is the molar mass of H₂O approximately?",["16 g/mol","18 g/mol","20 g/mol","22 g/mol"],1], 
+["Which law relates pressure and volume at constant temperature?",["Boyle's law","Charles' law","Ohm's law","Newton's law"],0], 
+["What is the value of log₁₀ 100?",["1","2","10","100"],1], 
+["If a vector has components 3 and 4, what is its magnitude?",["5","6","7","12"],0] 
+], 
+ 
+hard: [ 
+["What is the integral of 2x dx?",["x² + C","2x² + C","x + C","x²/2 + C"],0], 
+["If f(x) = x² + 3x, what is f'(x)?",["x + 3","2x + 3","x² + 3","2x"],1], 
+["What is the oxidation state of oxygen in H₂O?",["+1","-1","-2","+2"],2], 
+["A particle moving with constant velocity has:",["Constant acceleration","Zero acceleration","Increasing acceleration","Decreasing acceleration"],1], 
+["If the determinant of a 2 × 2 matrix is zero, the matrix is:",["Always identity","Singular","Always diagonal","Always symmetric"],1] 
+] 
+ 
+} 
+ 
+}; 
+ 
+ 
+/* ================================= 
+   CONVERT QUESTIONS 
+   ================================= */ 
+ 
+function convertQuestions(data) { 
+ 
+    return data.map(function(item) { 
+ 
+        return { 
+            question: item[0], 
+            options: item[1], 
+            answer: item[2] 
+        }; 
+ 
+    }); 
+ 
+} 
+ 
+ 
+/* ================================= 
+   START QUIZ 
+   ================================= */ 
+ 
+function startQuiz() { 
+ 
+    document.getElementById("quizHub").style.display = 
+        "block"; 
+ 
+    document.getElementById("quizHub").scrollIntoView({ 
+        behavior: "smooth" 
+    }); 
+ 
+} 
+ 
+ 
+/* ================================= 
+   SELECT CLASS 
+   ================================= */ 
+ 
+function selectClass(className) { 
+ 
+    selectedClass = className; 
+ 
+    document.getElementById("levelArea").style.display = 
+        "block"; 
+ 
+    document.getElementById("quizGame").style.display = 
+        "none"; 
+ 
+} 
+ 
+ 
+/* ================================= 
+   START LEVEL 
+   ================================= */ 
+ 
+function startLevel(level) { 
+ 
+    currentLevel = level; 
+ 
+    currentQuestion = 0; 
+ 
+    score = 0; 
+ 
+    document.getElementById("levelArea").style.display = 
+        "none"; 
+ 
+    document.getElementById("quizGame").style.display = 
+        "block"; 
+ 
+    document.getElementById("quizTitle").innerHTML = 
+        "🧠 Class " + 
+        selectedClass + 
+        " — " + 
+        level.toUpperCase() + 
+        " Challenge"; 
+ 
+    document.getElementById("quizGame").scrollIntoView({ 
+        behavior: "smooth" 
+    }); 
+ 
+    if (level === "mixed") { 
+ 
+        createMixedQuiz(); 
+ 
+    } 
+ 
+    showQuestion(); 
+ 
+} 
+ 
+ 
+/* ================================= 
+   MIXED QUIZ 
+   ================================= */ 
+ 
+function createMixedQuiz() { 
+ 
+    let allQuestions = []; 
+ 
+    let classQuiz = 
+        quizQuestions[selectedClass]; 
+ 
+ 
+    ["easy","medium","hard"].forEach(function(level) { 
+ 
+        let questions = 
+            convertQuestions(classQuiz[level]); 
+ 
+        questions.forEach(function(question) { 
+ 
+            allQuestions.push(question); 
+ 
+        }); 
+ 
+    }); 
+ 
+ 
+    allQuestions.sort(function() { 
+ 
+        return Math.random() - 0.5; 
+ 
+    }); 
+ 
+ 
+    quizQuestions[selectedClass].mixed = 
+        allQuestions.slice(0,10); 
+ 
+} 
+ 
+ 
+/* ================================= 
+   SHOW QUESTION 
+   ================================= */ 
+ 
+function showQuestion() { 
+ 
+    let rawQuiz = 
+        quizQuestions[selectedClass][currentLevel]; 
+ 
+    let quiz; 
+ 
+ 
+    if (currentLevel === "mixed") { 
+ 
+        quiz = rawQuiz; 
+ 
+    } else { 
+ 
+        quiz = convertQuestions(rawQuiz); 
+ 
+    } 
+ 
+ 
+    let q = 
+        quiz[currentQuestion]; 
+ 
+ 
+    document.getElementById("quizProgress").innerHTML = 
+        "Question " + 
+        (currentQuestion + 1) + 
+        " of " + 
+        quiz.length; 
+ 
+ 
+    document.getElementById("question").innerHTML = 
+        q.question; 
+ 
+ 
+    let optionsHTML = ""; 
+ 
+ 
+    q.options.forEach(function(option,index) { 
+ 
+        optionsHTML += 
+            '<button class="option-button" onclick="checkAnswer(' + 
+            index + 
+            ')">' + 
+            option + 
+            '</button>'; 
+ 
+    }); 
+ 
+ 
+    document.getElementById("options").innerHTML = 
+        optionsHTML; 
+ 
+ 
+    document.getElementById("score").innerHTML = 
+        "🏆 Score: " + 
+        score; 
+ 
+ 
+    document.getElementById("resultBox").innerHTML = 
+        ""; 
+ 
+} 
+ 
+ 
+/* ================================= 
+   CHECK ANSWER 
+   ================================= */ 
+ 
+function checkAnswer(selectedAnswer) { 
+ 
+    let rawQuiz = 
+        quizQuestions[selectedClass][currentLevel]; 
+ 
+    let quiz; 
+ 
+ 
+    if (currentLevel === "mixed") { 
+ 
+        quiz = rawQuiz; 
+ 
+    } else { 
+ 
+        quiz = convertQuestions(rawQuiz); 
+ 
+    } 
+ 
+ 
+    let correctAnswer = 
+        quiz[currentQuestion].answer; 
+ 
+ 
+    let buttons = 
+        document.querySelectorAll( 
+            "#options .option-button" 
+        ); 
+ 
+ 
+    buttons.forEach(function(button) { 
+ 
+        button.disabled = true; 
+ 
+    }); 
+ 
+ 
+    if (selectedAnswer === correctAnswer) { 
+ 
+        score++; 
+ 
+        buttons[selectedAnswer] 
+            .classList.add("correct"); 
+ 
+    } else { 
+ 
+        buttons[selectedAnswer] 
+            .classList.add("wrong"); 
+ 
+        buttons[correctAnswer] 
+            .classList.add("correct"); 
+ 
+    } 
+ 
+ 
+    document.getElementById("score").innerHTML = 
+        "🏆 Score: " + 
+        score; 
+ 
+ 
+    setTimeout(function() { 
+ 
+        currentQuestion++; 
+ 
+        if (currentQuestion < quiz.length) { 
+ 
+            showQuestion(); 
+ 
+        } else { 
+ 
+            showResult(); 
+ 
+        } 
+ 
+    },900); 
+ 
+} 
+ 
+ 
+/* ================================= 
+   SHOW RESULT 
+   ================================= */ 
+ 
+function showResult() { 
+ 
+    let rawQuiz = 
+        quizQuestions[selectedClass][currentLevel]; 
+ 
+    let quiz; 
+ 
+ 
+    if (currentLevel === "mixed") { 
+ 
+        quiz = rawQuiz; 
+ 
+    } else { 
+ 
+        quiz = convertQuestions(rawQuiz); 
+ 
+    } 
+ 
+ 
+    let total = 
+        quiz.length; 
+ 
+ 
+    let percentage = 
+        Math.round( 
+            (score / total) * 100 
+        ); 
+ 
+ 
+    document.getElementById("quizProgress").innerHTML = 
+        "Quiz Completed 🎉"; 
+ 
+ 
+    document.getElementById("question").innerHTML = 
+        "🎉 QUIZ COMPLETE!"; 
+ 
+ 
+    document.getElementById("options").innerHTML = 
+        ""; 
+ 
+ 
+    document.getElementById("score").innerHTML = 
+        "🏆 Your Score: " + 
+        score + 
+        " / " + 
+        total; 
+ 
+ 
+    document.getElementById("resultBox").innerHTML = 
+ 
+        "<h2>📊 Result</h2>" + 
+ 
+        "<p><strong>Class:</strong> " + 
+        selectedClass + 
+        "</p>" + 
+ 
+        "<p><strong>Level:</strong> " + 
+        currentLevel.toUpperCase() + 
+        "</p>" + 
+ 
+        "<p><strong>Score:</strong> " + 
+        score + 
+        " / " + 
+        total + 
+        "</p>" + 
+ 
+        "<p><strong>Percentage:</strong> " + 
+        percentage + 
+        "%</p>" + 
+ 
+        '<button onclick="restartQuiz()">' + 
+        "🔄 Try Again" + 
+        "</button>" + 
+ 
+        '<button onclick="chooseAnotherQuiz()">' + 
+        "🎓 Choose Another Quiz" + 
+        "</button>"; 
+ 
+} 
+ 
+ 
+/* ================================= 
+   RESTART QUIZ 
+   ================================= */ 
+ 
+function restartQuiz() { 
+ 
+    currentQuestion = 0; 
+ 
+    score = 0; 
+ 
+ 
+    if (currentLevel === "mixed") { 
+ 
+        createMixedQuiz(); 
+ 
+    } 
+ 
+ 
+    showQuestion(); 
+ 
+} 
+ 
+ 
+/* ================================= 
+   CHOOSE ANOTHER QUIZ 
+   ================================= */ 
+ 
+function chooseAnotherQuiz() { 
+ 
+    document.getElementById("quizGame").style.display = 
+        "none"; 
+ 
+    document.getElementById("quizHub").style.display = 
+        "block"; 
+ 
+    document.getElementById("levelArea").style.display = 
+        "none"; 
+ 
+    document.getElementById("quizHub").scrollIntoView({ 
+        behavior: "smooth" 
+    }); 
+ 
+} 
+ 
+ 
+/* ================================= 
+   CONTACT FORM 
+   ================================= */ 
+ 
+document.querySelector("form").addEventListener( 
+    "submit", 
+    function(event) { 
+ 
+        event.preventDefault(); 
+ 
+        alert( 
+            "Thank you! Your message form is ready." 
+        ); 
+ 
+    } 
+); 
+ 
 
-<section id="about">
-    <h2>About Us</h2>
-    <p>
-        MY BUSINESS HUB is a flexible business platform
-        designed for future products, services and opportunities.
-    </p>
-</section>
-<section id="products">
-    <h2>Our Products</h2>
-    <p>Explore our products and discover something useful for you.</p>
 
-    <div class="services">
+/* =================================
+   ASK ANYTHING AI
+   ================================= */
 
-        <div class="card">
-            <h3>Product 1</h3>
-            <p>Quality products for your needs.</p>
-        </div>
+async function askAnything() {
 
-        <div class="card">
-            <h3>Product 2</h3>
-            <p>Reliable products at great value.</p>
-        </div>
+    const input = document.getElementById("aiQuestion");
+    const answerBox = document.getElementById("aiAnswer");
+    const answerText = document.getElementById("aiAnswerText");
+    const button = document.querySelector(".ai-search-button");
 
-        <div class="card">
-            <h3>Product 3</h3>
-            <p>New products and useful solutions.</p>
-        </div>
+    const question = input.value.trim();
 
-    </div>
-</section>
+    if (!question) {
+        answerBox.style.display = "block";
+        answerText.textContent = "Please type a question first.";
+        return;
+    }
 
-<section id="services">
-    <h2>Our Services</h2>
+    answerBox.style.display = "block";
+    answerText.innerHTML = '<span class="ai-status">Thinking...</span>';
+    button.disabled = true;
+    button.textContent = "⏳ Thinking";
 
-    <div class="services">
+    try {
 
-        <div class="card">
-            <h3>Products</h3>
-            <p>Showcase and sell your products here.</p>
-        </div>
+        const response = await fetch("YOUR_BACKEND_URL/ask", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                question: question
+            })
+        });
 
-        <div class="card">
-            <h3>Services</h3>
-            <p>Tell customers about the services you provide.</p>
-        </div>
+        const data = await response.json();
 
-        <div class="card">
-            <h3>Business Solutions</h3>
-            <p>Build new opportunities for your future business.</p>
-        </div>
+        if (!response.ok) {
+            throw new Error(data.error || "Unable to get an answer.");
+        }
 
-    </div>
-</section>
+        answerText.textContent = data.answer || "No answer was returned.";
 
-<section id="contact">
-    <h2>Contact Us</h2>
-<p>Email: <a href="mailto:your@email.com">Contact Us by Email</a></p>    
-<form>
-    <h3>Send Us a Message</h3>
+    } catch (error) {
 
-    <input type="text" placeholder="Your Name" required><br><br>
+        answerText.textContent =
+            "Sorry, I could not get an answer right now.\n\n" +
+            error.message;
 
-    <input type="email" placeholder="Your Email" required><br><br>
+    } finally {
 
-    <textarea placeholder="Your Message" rows="5" required></textarea><br><br>
+        button.disabled = false;
+        button.textContent = "🔍 Ask";
 
-    <button type="submit">Send Message</button>
-</form>
-</section>
+    }
+}
 
-<footer>
-    <p>© 2026 MY BUSINESS HUB. All Rights Reserved.</p>
-</footer>
 
-</body>
+document.getElementById("aiQuestion").addEventListener(
+    "keydown",
+    function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            askAnything();
+        }
+    }
+);
+
+</script> 
+ 
+</body> 
 </html>
