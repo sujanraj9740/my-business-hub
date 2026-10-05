@@ -728,6 +728,34 @@ footer{
 }
 </style>
 
+
+<style id="no-background-animation">
+/* Static background — no moving background effects */
+html, body {
+  background: linear-gradient(135deg,#eef7ff,#f6f1ff) !important;
+  background-attachment: fixed !important;
+}
+body::before,
+body::after {
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+  opacity: 0 !important;
+}
+#particles,
+#particles-js,
+.particles,
+.background-particles,
+.bg-particles,
+.floating-particles,
+.animated-background,
+.bg-animation,
+.background-animation {
+  display: none !important;
+  animation: none !important;
+}
+</style>
+
 </head> 
  
 <body> 
