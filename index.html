@@ -653,6 +653,42 @@ nav a{transition:transform .25s ease,text-shadow .25s ease}
 nav a:hover{transform:translateY(-2px);text-shadow:0 0 14px rgba(255,255,255,.55)}
 section{animation:fadeUp .8s ease both}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* ===== PREMIUM DARK ANIMATED BACKGROUND ===== */
+html { scroll-behavior: smooth; }
+body {
+  background: radial-gradient(circle at 15% 15%, rgba(59,130,246,.28), transparent 32%),
+              radial-gradient(circle at 85% 25%, rgba(139,92,246,.24), transparent 30%),
+              radial-gradient(circle at 50% 90%, rgba(14,165,233,.18), transparent 34%),
+              linear-gradient(135deg, #07111f 0%, #0b1730 45%, #111827 100%);
+  color: #e5eefb;
+  background-attachment: fixed;
+  position: relative;
+}
+body::before, body::after {
+  content: ""; position: fixed; inset: -20%; pointer-events: none; z-index: -1;
+}
+body::before {
+  background: radial-gradient(circle, rgba(96,165,250,.16) 0 2px, transparent 3px);
+  background-size: 75px 75px; opacity: .45; animation: bgDrift 24s linear infinite;
+}
+body::after {
+  background: linear-gradient(120deg, transparent 35%, rgba(255,255,255,.035) 50%, transparent 65%);
+  animation: bgShine 10s ease-in-out infinite;
+}
+@keyframes bgDrift { from { transform: translate3d(0,0,0); } to { transform: translate3d(75px,75px,0); } }
+@keyframes bgShine { 0%,100% { transform: translateX(-35%); } 50% { transform: translateX(35%); } }
+header { background: rgba(3,10,24,.82) !important; backdrop-filter: blur(14px); border-bottom: 1px solid rgba(148,163,184,.18); }
+nav { background: rgba(7,17,31,.88) !important; backdrop-filter: blur(12px); border-bottom: 1px solid rgba(96,165,250,.18); }
+section { position: relative; }
+.card, .services, .ai-search-box, .bs-card, .premium-about-section, .premium-services-section {
+  color: #172033;
+}
+footer { background: rgba(3,10,24,.9) !important; color: #dbeafe; }
+@media (prefers-reduced-motion: reduce) {
+  body::before, body::after { animation: none; }
+}
+
 </style> 
 </head> 
  
