@@ -6265,5 +6265,576 @@ function mbhCelebrateAchievement(){
 }
 
 </script>
+ <!-- =====================================================
+     🎮 MY BUSINESS HUB — BRAINSPARK SPEED CHALLENGE
+     ===================================================== -->
+
+<style>
+.mbh-game-section{
+    padding:90px 20px;
+    background:linear-gradient(135deg,#020617,#172554,#312e81);
+    color:#fff;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.mbh-game-container{
+    max-width:900px;
+    margin:auto;
+}
+
+.mbh-game-title{
+    font-size:clamp(34px,6vw,64px);
+    font-weight:950;
+    color:#fff;
+    margin-bottom:10px;
+}
+
+.mbh-game-subtitle{
+    color:#cbd5e1;
+    line-height:1.7;
+    margin-bottom:35px;
+}
+
+.mbh-game-box{
+    background:rgba(15,23,42,.9);
+    border:1px solid #475569;
+    border-radius:28px;
+    padding:35px;
+    box-shadow:0 30px 80px rgba(0,0,0,.35);
+}
+
+.mbh-game-top{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-bottom:25px;
+}
+
+.mbh-game-stat{
+    background:#1e293b;
+    padding:12px 18px;
+    border-radius:14px;
+    font-weight:800;
+}
+
+.mbh-game-question{
+    font-size:clamp(22px,4vw,34px);
+    font-weight:900;
+    color:#fff;
+    margin:35px 0;
+    min-height:70px;
+}
+
+.mbh-game-options{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.mbh-game-option{
+    padding:17px;
+    border:1px solid #475569;
+    border-radius:15px;
+    background:#0f172a;
+    color:#fff;
+    font-size:16px;
+    font-weight:800;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.mbh-game-option:hover{
+    transform:translateY(-3px);
+    border-color:#60a5fa;
+    background:#1e3a8a;
+}
+
+.mbh-game-option.correct{
+    background:#166534!important;
+    border-color:#4ade80!important;
+}
+
+.mbh-game-option.wrong{
+    background:#7f1d1d!important;
+    border-color:#f87171!important;
+}
+
+.mbh-game-next{
+    margin-top:25px;
+    padding:14px 28px;
+    border:0;
+    border-radius:14px;
+    background:linear-gradient(90deg,#2563eb,#7c3aed);
+    color:#fff;
+    font-weight:900;
+    cursor:pointer;
+}
+
+.mbh-game-next:disabled{
+    opacity:.5;
+    cursor:not-allowed;
+}
+
+.mbh-game-result{
+    display:none;
+    margin-top:30px;
+    padding:25px;
+    border-radius:20px;
+    background:#111827;
+    border:1px solid #475569;
+}
+
+.mbh-game-result h3{
+    color:#fff;
+    font-size:30px;
+}
+
+.mbh-game-trophy{
+    font-size:80px;
+    animation:mbhTrophyPulse 1.8s infinite;
+}
+
+@keyframes mbhTrophyPulse{
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.15)}
+}
+
+@media(max-width:600px){
+    .mbh-game-options{
+        grid-template-columns:1fr;
+    }
+
+    .mbh-game-box{
+        padding:22px;
+    }
+}
+</style>
+
+
+<section class="mbh-game-section" id="brainSparkGame">
+
+    <div class="mbh-game-container">
+
+        <h2 class="mbh-game-title">
+            🎮 BrainSpark Speed Challenge
+        </h2>
+
+        <p class="mbh-game-subtitle">
+            Think fast. Answer correctly. Earn points.
+            Unlock your achievement trophy.
+        </p>
+
+        <div class="mbh-game-box">
+
+            <div class="mbh-game-top">
+
+                <div class="mbh-game-stat">
+                    🏆 Score:
+                    <span id="mbhGameScore">0</span>
+                </div>
+
+                <div class="mbh-game-stat">
+                    ❓ Question:
+                    <span id="mbhGameNumber">1</span>/10
+                </div>
+
+                <div class="mbh-game-stat">
+                    ⚡ Streak:
+                    <span id="mbhGameStreak">0</span>
+                </div>
+
+            </div>
+
+
+            <div
+                class="mbh-game-question"
+                id="mbhGameQuestion">
+            </div>
+
+
+            <div
+                class="mbh-game-options"
+                id="mbhGameOptions">
+            </div>
+
+
+            <button
+                class="mbh-game-next"
+                id="mbhGameNext"
+                disabled
+                onclick="mbhNextGameQuestion()">
+
+                Next Question →
+
+            </button>
+
+
+            <div
+                class="mbh-game-result"
+                id="mbhGameResult">
+
+                <div class="mbh-game-trophy">
+                    🏆
+                </div>
+
+                <h3>
+                    Challenge Complete!
+                </h3>
+
+                <p id="mbhGameFinalScore"></p>
+
+                <button
+                    class="mbh-game-next"
+                    onclick="mbhRestartGame()">
+
+                    🔄 Play Again
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+const mbhGameQuestions = [
+
+    {
+        q:"Which planet is known as the Red Planet?",
+        options:["Earth","Mars","Jupiter","Venus"],
+        answer:"Mars"
+    },
+
+    {
+        q:"What is 12 × 8?",
+        options:["86","96","108","112"],
+        answer:"96"
+    },
+
+    {
+        q:"Which gas do plants mainly use for photosynthesis?",
+        options:["Oxygen","Nitrogen","Carbon dioxide","Hydrogen"],
+        answer:"Carbon dioxide"
+    },
+
+    {
+        q:"How many sides does a hexagon have?",
+        options:["5","6","7","8"],
+        answer:"6"
+    },
+
+    {
+        q:"What is the capital of India?",
+        options:["Mumbai","New Delhi","Kolkata","Chennai"],
+        answer:"New Delhi"
+    },
+
+    {
+        q:"Which organ pumps blood through the body?",
+        options:["Lungs","Brain","Heart","Kidney"],
+        answer:"Heart"
+    },
+
+    {
+        q:"What is 15²?",
+        options:["125","200","225","250"],
+        answer:"225"
+    },
+
+    {
+        q:"Which is the largest ocean?",
+        options:[
+            "Atlantic Ocean",
+            "Indian Ocean",
+            "Pacific Ocean",
+            "Arctic Ocean"
+        ],
+        answer:"Pacific Ocean"
+    },
+
+    {
+        q:"What is the chemical symbol for oxygen?",
+        options:["Ox","O","Og","C"],
+        answer:"O"
+    },
+
+    {
+        q:"How many degrees are there in a right angle?",
+        options:["45°","90°","180°","360°"],
+        answer:"90°"
+    }
+
+];
+
+
+let mbhGameCurrent = 0;
+let mbhGameScore = 0;
+let mbhGameStreak = 0;
+let mbhGameAnswered = false;
+
+
+function mbhLoadGameQuestion(){
+
+    mbhGameAnswered = false;
+
+    const question =
+        mbhGameQuestions[mbhGameCurrent];
+
+    document.getElementById(
+        "mbhGameQuestion"
+    ).textContent = question.q;
+
+
+    document.getElementById(
+        "mbhGameNumber"
+    ).textContent = mbhGameCurrent + 1;
+
+
+    document.getElementById(
+        "mbhGameNext"
+    ).disabled = true;
+
+
+    const options =
+        document.getElementById(
+            "mbhGameOptions"
+        );
+
+    options.innerHTML = "";
+
+
+    question.options.forEach(option => {
+
+        const button =
+            document.createElement("button");
+
+        button.className =
+            "mbh-game-option";
+
+        button.textContent =
+            option;
+
+        button.onclick = function(){
+
+            mbhCheckGameAnswer(
+                button,
+                option
+            );
+
+        };
+
+        options.appendChild(button);
+
+    });
+
+}
+
+
+function mbhCheckGameAnswer(
+    selectedButton,
+    selectedAnswer
+){
+
+    if(mbhGameAnswered) return;
+
+    mbhGameAnswered = true;
+
+    const question =
+        mbhGameQuestions[mbhGameCurrent];
+
+
+    const buttons =
+        document.querySelectorAll(
+            ".mbh-game-option"
+        );
+
+
+    buttons.forEach(button => {
+
+        button.disabled = true;
+
+        if(button.textContent === question.answer){
+
+            button.classList.add("correct");
+
+        }
+
+    });
+
+
+    if(selectedAnswer === question.answer){
+
+        selectedButton.classList.add("correct");
+
+        mbhGameStreak++;
+
+        mbhGameScore +=
+            100 + (mbhGameStreak * 10);
+
+    }
+    else{
+
+        selectedButton.classList.add("wrong");
+
+        mbhGameStreak = 0;
+
+    }
+
+
+    document.getElementById(
+        "mbhGameScore"
+    ).textContent = mbhGameScore;
+
+
+    document.getElementById(
+        "mbhGameStreak"
+    ).textContent = mbhGameStreak;
+
+
+    document.getElementById(
+        "mbhGameNext"
+    ).disabled = false;
+
+}
+
+
+function mbhNextGameQuestion(){
+
+    mbhGameCurrent++;
+
+
+    if(
+        mbhGameCurrent >=
+        mbhGameQuestions.length
+    ){
+
+        mbhFinishGame();
+
+        return;
+
+    }
+
+
+    mbhLoadGameQuestion();
+
+}
+
+
+function mbhFinishGame(){
+
+    document.getElementById(
+        "mbhGameQuestion"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "mbhGameOptions"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "mbhGameNext"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "mbhGameResult"
+    ).style.display = "block";
+
+
+    let message = "";
+
+    if(mbhGameScore >= 1300){
+
+        message =
+            "🏆 Champion level! You earned the Golden Cup!";
+
+    }
+    else if(mbhGameScore >= 900){
+
+        message =
+            "🥇 Excellent! You earned a Gold achievement!";
+
+    }
+    else if(mbhGameScore >= 500){
+
+        message =
+            "🥈 Great job! You earned a Silver achievement!";
+
+    }
+    else{
+
+        message =
+            "🥉 Good attempt! Keep practicing!";
+
+    }
+
+
+    document.getElementById(
+        "mbhGameFinalScore"
+    ).textContent =
+        "Your score: " +
+        mbhGameScore +
+        " points. " +
+        message;
+
+}
+
+
+function mbhRestartGame(){
+
+    mbhGameCurrent = 0;
+
+    mbhGameScore = 0;
+
+    mbhGameStreak = 0;
+
+
+    document.getElementById(
+        "mbhGameScore"
+    ).textContent = "0";
+
+
+    document.getElementById(
+        "mbhGameStreak"
+    ).textContent = "0";
+
+
+    document.getElementById(
+        "mbhGameQuestion"
+    ).style.display = "block";
+
+
+    document.getElementById(
+        "mbhGameOptions"
+    ).style.display = "grid";
+
+
+    document.getElementById(
+        "mbhGameNext"
+    ).style.display = "inline-block";
+
+
+    document.getElementById(
+        "mbhGameResult"
+    ).style.display = "none";
+
+
+    mbhLoadGameQuestion();
+
+}
+
+
+mbhLoadGameQuestion();
+
+</script>
 </body> 
 </html>
