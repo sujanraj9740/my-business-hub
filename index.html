@@ -5891,6 +5891,379 @@ document.getElementById("bsChatInput").addEventListener("keydown",function(e){
   counters.forEach(function(el){countObserver.observe(el)});
 })();
 </script>
+<!-- =====================================================
+     🏆 MY BUSINESS HUB — TROPHY & ACHIEVEMENT SYSTEM
+     ===================================================== -->
 
+<style>
+.mbh-trophy-section{
+    padding:90px 20px;
+    background:linear-gradient(135deg,#020617,#111827,#1e1b4b);
+    color:white;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.mbh-trophy-section h2{
+    font-size:clamp(32px,5vw,58px);
+    font-weight:900;
+    margin-bottom:12px;
+    color:#fff;
+}
+
+.mbh-trophy-subtitle{
+    color:#cbd5e1;
+    max-width:700px;
+    margin:0 auto 45px;
+    line-height:1.7;
+}
+
+.mbh-trophy-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:22px;
+}
+
+.mbh-trophy-card{
+    padding:30px 20px;
+    border-radius:24px;
+    background:rgba(15,23,42,.82);
+    border:1px solid rgba(148,163,184,.25);
+    transition:.35s;
+    position:relative;
+    overflow:hidden;
+}
+
+.mbh-trophy-card:hover{
+    transform:translateY(-10px) scale(1.02);
+    border-color:#facc15;
+    box-shadow:0 20px 60px rgba(250,204,21,.18);
+}
+
+.mbh-trophy-icon{
+    font-size:65px;
+    margin-bottom:15px;
+    display:block;
+    filter:drop-shadow(0 0 15px rgba(250,204,21,.35));
+}
+
+.mbh-trophy-card h3{
+    color:#fff;
+    font-size:22px;
+    margin:8px 0;
+}
+
+.mbh-trophy-card p{
+    color:#cbd5e1;
+    line-height:1.6;
+    font-size:14px;
+}
+
+.mbh-stars{
+    font-size:25px;
+    letter-spacing:4px;
+    margin:12px 0;
+}
+
+.mbh-achievement-progress{
+    width:100%;
+    height:8px;
+    background:#1e293b;
+    border-radius:20px;
+    overflow:hidden;
+    margin-top:18px;
+}
+
+.mbh-achievement-progress span{
+    display:block;
+    height:100%;
+    width:0;
+    background:linear-gradient(90deg,#facc15,#f59e0b);
+    border-radius:20px;
+    transition:2s ease;
+}
+
+.mbh-trophy-badge{
+    position:absolute;
+    top:15px;
+    right:15px;
+    background:#facc15;
+    color:#422006;
+    padding:5px 9px;
+    border-radius:20px;
+    font-size:10px;
+    font-weight:900;
+}
+
+.mbh-total-achievements{
+    max-width:900px;
+    margin:50px auto 0;
+    padding:30px;
+    border-radius:25px;
+    background:rgba(30,41,59,.75);
+    border:1px solid #334155;
+}
+
+.mbh-total-achievements h3{
+    color:#fff;
+    font-size:25px;
+}
+
+.mbh-achievement-number{
+    font-size:55px;
+    font-weight:950;
+    color:#facc15;
+}
+
+.mbh-trophy-button{
+    margin-top:25px;
+    padding:14px 25px;
+    border:0;
+    border-radius:14px;
+    background:linear-gradient(90deg,#f59e0b,#facc15);
+    color:#422006;
+    font-weight:900;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.mbh-trophy-button:hover{
+    transform:translateY(-3px) scale(1.03);
+    box-shadow:0 12px 30px rgba(250,204,21,.3);
+}
+
+@keyframes trophyGlow{
+    0%,100%{
+        transform:scale(1);
+        filter:drop-shadow(0 0 10px rgba(250,204,21,.3));
+    }
+    50%{
+        transform:scale(1.12);
+        filter:drop-shadow(0 0 30px rgba(250,204,21,.8));
+    }
+}
+
+.mbh-trophy-icon.unlocked{
+    animation:trophyGlow 2.5s infinite;
+}
+</style>
+
+
+<section class="mbh-trophy-section" id="achievements">
+
+    <h2>🏆 Achievements</h2>
+
+    <p class="mbh-trophy-subtitle">
+        Earn stars, unlock trophies and show your progress
+        as you explore MY BUSINESS HUB.
+    </p>
+
+    <div class="mbh-trophy-grid">
+
+        <!-- TROPHY 1 -->
+        <div class="mbh-trophy-card">
+            <span class="mbh-trophy-badge">UNLOCKED</span>
+
+            <span class="mbh-trophy-icon unlocked">🏆</span>
+
+            <h3>Hub Explorer</h3>
+
+            <div class="mbh-stars">
+                ⭐⭐⭐⭐
+            </div>
+
+            <p>
+                Explore the major sections of MY BUSINESS HUB.
+            </p>
+
+            <div class="mbh-achievement-progress">
+                <span style="width:100%"></span>
+            </div>
+        </div>
+
+
+        <!-- TROPHY 2 -->
+        <div class="mbh-trophy-card">
+
+            <span class="mbh-trophy-icon unlocked">🥇</span>
+
+            <h3>Study Champion</h3>
+
+            <div class="mbh-stars">
+                ⭐⭐⭐⭐
+            </div>
+
+            <p>
+                Complete study activities, practice questions
+                and quizzes.
+            </p>
+
+            <div class="mbh-achievement-progress">
+                <span style="width:75%"></span>
+            </div>
+        </div>
+
+
+        <!-- TROPHY 3 -->
+        <div class="mbh-trophy-card">
+
+            <span class="mbh-trophy-icon unlocked">💡</span>
+
+            <h3>Smart Thinker</h3>
+
+            <div class="mbh-stars">
+                ⭐⭐⭐⭐
+            </div>
+
+            <p>
+                Use BrainSpark and solve challenging questions.
+            </p>
+
+            <div class="mbh-achievement-progress">
+                <span style="width:60%"></span>
+            </div>
+        </div>
+
+
+        <!-- TROPHY 4 -->
+        <div class="mbh-trophy-card">
+
+            <span class="mbh-trophy-icon">👑</span>
+
+            <h3>Ultimate Champion</h3>
+
+            <div class="mbh-stars">
+                ⭐⭐⭐⭐⭐
+            </div>
+
+            <p>
+                Complete all major challenges and become
+                a MY BUSINESS HUB Champion.
+            </p>
+
+            <div class="mbh-achievement-progress">
+                <span style="width:35%"></span>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- TOTAL -->
+    <div class="mbh-total-achievements">
+
+        <h3>🏆 Your Achievement Score</h3>
+
+        <div class="mbh-achievement-number" id="mbhAchievementScore">
+            0
+        </div>
+
+        <p style="color:#cbd5e1">
+            Achievement Points
+        </p>
+
+        <button
+            class="mbh-trophy-button"
+            onclick="mbhCelebrateAchievement()">
+
+            ✨ Celebrate My Progress
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<script>
+
+(function(){
+
+    const scoreElement =
+        document.getElementById("mbhAchievementScore");
+
+    if(scoreElement){
+
+        let score = 0;
+
+        const target = 850;
+
+        const interval = setInterval(function(){
+
+            score += 10;
+
+            if(score >= target){
+
+                score = target;
+                clearInterval(interval);
+
+            }
+
+            scoreElement.textContent = score;
+
+        },20);
+
+    }
+
+})();
+
+
+function mbhCelebrateAchievement(){
+
+    const section =
+        document.getElementById("achievements");
+
+    if(!section) return;
+
+    for(let i=0;i<18;i++){
+
+        const star = document.createElement("div");
+
+        star.textContent =
+            ["⭐","✨","🏆","🌟"][Math.floor(Math.random()*4)];
+
+        star.style.position="fixed";
+        star.style.left=Math.random()*100+"vw";
+        star.style.top="-30px";
+        star.style.fontSize=(18+Math.random()*25)+"px";
+        star.style.zIndex="99999";
+        star.style.pointerEvents="none";
+
+        document.body.appendChild(star);
+
+        const duration =
+            1500 + Math.random()*1800;
+
+        star.animate(
+            [
+                {
+                    transform:"translateY(0) rotate(0deg)",
+                    opacity:1
+                },
+                {
+                    transform:
+                        "translateY(110vh) rotate(720deg)",
+                    opacity:0
+                }
+            ],
+            {
+                duration:duration,
+                easing:"ease-in"
+            }
+        );
+
+        setTimeout(
+            ()=>star.remove(),
+            duration
+        );
+
+    }
+
+}
+
+</script>
 </body> 
 </html>
