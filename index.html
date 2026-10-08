@@ -940,18 +940,19 @@ body.mbh-dark .mbh-skill{background:#1f2937;color:#fff;border-color:#334155}
 @media(max-width:600px){.mbh-game-options{grid-template-columns:1fr}}
 </style>
 
-<style id="mbh-business-powerhouse-css">
-#mbhBusinessPowerhouse{padding:70px 5%;background:linear-gradient(135deg,#07111f,#101b35);color:#fff}
-.mbh-bp-wrap{max-width:1200px;margin:auto}.mbh-bp-title{text-align:center;margin-bottom:35px}
-.mbh-bp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.mbh-bp-card{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:22px;transition:.25s}
-.mbh-bp-card:hover{transform:translateY(-7px);box-shadow:0 18px 45px rgba(0,0,0,.25)}
-.mbh-bp-card h3{margin:8px 0}.mbh-bp-card p{color:#dbe5f5}
-.mbh-bp-btn{border:0;border-radius:10px;padding:10px 14px;font-weight:700;cursor:pointer;background:#fff;color:#111;margin-top:8px}
-.mbh-bp-panel{display:none;margin-top:22px;padding:22px;border-radius:18px;background:#fff;color:#111}
-.mbh-bp-panel.active{display:block}.mbh-bp-input{width:100%;padding:12px;margin:7px 0;border:1px solid #bbb;border-radius:9px;box-sizing:border-box}
-.mbh-bp-result{font-weight:700;margin-top:12px}
-@media(max-width:650px){#mbhBusinessPowerhouse{padding:50px 16px}}
+<style id="business-suite-css">
+.mbh-suite{padding:70px 5%;background:linear-gradient(135deg,#06101d,#14213d);color:#fff}
+.mbh-suite-wrap{max-width:1250px;margin:auto}.mbh-suite-head{text-align:center;margin-bottom:30px}
+.mbh-suite-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.mbh-suite-card{padding:20px;border:1px solid #ffffff2b;background:#ffffff12;border-radius:18px;transition:.25s}
+.mbh-suite-card:hover{transform:translateY(-6px);box-shadow:0 18px 45px #0005}
+.mbh-suite-card p{color:#dce6f7;min-height:42px}.mbh-suite-btn{border:0;border-radius:10px;padding:10px 14px;font-weight:700;cursor:pointer}
+.mbh-suite-panel{display:none;background:#fff;color:#111;border-radius:18px;padding:24px;margin-top:22px}
+.mbh-suite-panel.active{display:block}.mbh-suite-panel input,.mbh-suite-panel select,.mbh-suite-panel textarea{width:100%;box-sizing:border-box;padding:11px;margin:6px 0;border:1px solid #bbb;border-radius:9px}
+.mbh-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:15px 0}
+.mbh-kpi{background:#eef2f7;padding:14px;border-radius:12px}.mbh-kpi b{display:block;font-size:22px}
+.mbh-table{width:100%;border-collapse:collapse}.mbh-table th,.mbh-table td{border:1px solid #ddd;padding:8px}
+@media(max-width:650px){.mbh-suite{padding:50px 16px}}
 </style>
 
 </head> 
@@ -5975,53 +5976,78 @@ window.mbhTools=function(){for(const s of ["#tools","#quickTools","#smartTools",
 })();
 </script>
 
-<section id="mbhBusinessPowerhouse">
-<div class="mbh-bp-wrap">
-  <div class="mbh-bp-title">
-    <div>💼 BUSINESS POWERHOUSE</div>
-    <h2>Build. Sell. Manage. Grow.</h2>
-    <p>Turning MY BUSINESS HUB into a stronger business-first platform.</p>
-  </div>
-
-  <div class="mbh-bp-grid">
-    <article class="mbh-bp-card"><div>📊</div><h3>Business Dashboard</h3><p>Track products, orders, leads and business activity.</p><button class="mbh-bp-btn" onclick="mbhBP('dashboard')">Open Dashboard</button></article>
-    <article class="mbh-bp-card"><div>🛍️</div><h3>Store Manager</h3><p>Manage products, pricing, stock and featured offers.</p><button class="mbh-bp-btn" onclick="mbhBP('store')">Manage Store</button></article>
-    <article class="mbh-bp-card"><div>🧾</div><h3>Invoice Builder</h3><p>Create a simple customer invoice instantly.</p><button class="mbh-bp-btn" onclick="mbhBP('invoice')">Create Invoice</button></article>
-    <article class="mbh-bp-card"><div>🎯</div><h3>Lead Center</h3><p>Capture customer enquiries and turn interest into opportunities.</p><button class="mbh-bp-btn" onclick="mbhBP('leads')">Add Lead</button></article>
-    <article class="mbh-bp-card"><div>📈</div><h3>Sales Calculator</h3><p>Estimate revenue, costs and profit before making a decision.</p><button class="mbh-bp-btn" onclick="mbhBP('sales')">Calculate</button></article>
-    <article class="mbh-bp-card"><div>🏷️</div><h3>Offer Builder</h3><p>Create a discount or promotional offer for your store.</p><button class="mbh-bp-btn" onclick="mbhBP('offer')">Create Offer</button></article>
-    <article class="mbh-bp-card"><div>🔎</div><h3>Business Finder</h3><p>Quickly search your hub for products, services and business areas.</p><button class="mbh-bp-btn" onclick="mbhBP('finder')">Search Hub</button></article>
-    <article class="mbh-bp-card"><div>🚀</div><h3>Growth Planner</h3><p>Set a business goal and break it into practical milestones.</p><button class="mbh-bp-btn" onclick="mbhBP('growth')">Plan Growth</button></article>
-  </div>
-
-  <div id="mbhBPPanel" class="mbh-bp-panel"></div>
-</div>
-</section>
+<section id="mbhBusinessSuite" class="mbh-suite">
+<div class="mbh-suite-wrap">
+<div class="mbh-suite-head"><div>🏢 BUSINESS OPERATING SUITE</div><h2>Start • Sell • Manage • Market • Grow</h2><p>All major business tools in one place.</p></div>
+<div class="mbh-suite-grid">
+<article class="mbh-suite-card"><div>📊</div><h3>Business Dashboard</h3><p>Revenue, expenses, profit, orders and activity.</p><button class="mbh-suite-btn" onclick="mbhOpen('dashboard')">Open</button></article><article class="mbh-suite-card"><div>🛒</div><h3>Advanced Store</h3><p>Products, categories, prices, stock and featured offers.</p><button class="mbh-suite-btn" onclick="mbhOpen('store')">Open</button></article><article class="mbh-suite-card"><div>👥</div><h3>Customer CRM</h3><p>Customer records, status, contacts and notes.</p><button class="mbh-suite-btn" onclick="mbhOpen('crm')">Open</button></article><article class="mbh-suite-card"><div>🎯</div><h3>Lead Center</h3><p>Track prospects from new lead to conversion.</p><button class="mbh-suite-btn" onclick="mbhOpen('leads')">Open</button></article><article class="mbh-suite-card"><div>💰</div><h3>Finance Center</h3><p>Income, expenses and automatic profit.</p><button class="mbh-suite-btn" onclick="mbhOpen('finance')">Open</button></article><article class="mbh-suite-card"><div>🧾</div><h3>Invoice & Quote</h3><p>Create simple invoices and quotations.</p><button class="mbh-suite-btn" onclick="mbhOpen('invoice')">Open</button></article><article class="mbh-suite-card"><div>📦</div><h3>Inventory</h3><p>Stock monitoring and low-stock alerts.</p><button class="mbh-suite-btn" onclick="mbhOpen('inventory')">Open</button></article><article class="mbh-suite-card"><div>📈</div><h3>Analytics</h3><p>Business performance and key metrics.</p><button class="mbh-suite-btn" onclick="mbhOpen('analytics')">Open</button></article><article class="mbh-suite-card"><div>📣</div><h3>Marketing Center</h3><p>Offers, campaigns and promotional ideas.</p><button class="mbh-suite-btn" onclick="mbhOpen('marketing')">Open</button></article><article class="mbh-suite-card"><div>🤖</div><h3>AI Business Assistant</h3><p>Names, slogans, descriptions and business plans.</p><button class="mbh-suite-btn" onclick="mbhOpen('assistant')">Open</button></article><article class="mbh-suite-card"><div>🏪</div><h3>Business Directory</h3><p>Create a business profile.</p><button class="mbh-suite-btn" onclick="mbhOpen('directory')">Open</button></article><article class="mbh-suite-card"><div>⭐</div><h3>Reviews & Ratings</h3><p>Store customer feedback and ratings.</p><button class="mbh-suite-btn" onclick="mbhOpen('reviews')">Open</button></article><article class="mbh-suite-card"><div>🔔</div><h3>Notifications</h3><p>Business and inventory alerts.</p><button class="mbh-suite-btn" onclick="mbhOpen('notifications')">Open</button></article><article class="mbh-suite-card"><div>📅</div><h3>Business Planner</h3><p>Tasks and deadlines.</p><button class="mbh-suite-btn" onclick="mbhOpen('planner')">Open</button></article><article class="mbh-suite-card"><div>🎯</div><h3>Goal Tracker</h3><p>Targets and progress.</p><button class="mbh-suite-btn" onclick="mbhOpen('goals')">Open</button></article><article class="mbh-suite-card"><div>🏆</div><h3>Achievements</h3><p>Unlock business milestones.</p><button class="mbh-suite-btn" onclick="mbhOpen('achievements')">Open</button></article><article class="mbh-suite-card"><div>🌐</div><h3>Marketplace Hub</h3><p>Products, services and business categories.</p><button class="mbh-suite-btn" onclick="mbhOpen('marketplace')">Open</button></article><article class="mbh-suite-card"><div>💡</div><h3>Business Idea Lab</h3><p>Save and organize business ideas.</p><button class="mbh-suite-btn" onclick="mbhOpen('ideas')">Open</button></article>
+</div><div id="mbhBusinessPanel" class="mbh-suite-panel"></div>
+</div></section>
 
 
-<script id="mbh-business-powerhouse-js">
+<script id="business-suite-js">
 (function(){
- const panel=()=>document.getElementById('mbhBPPanel');
- window.mbhBP=function(type){
-   const p=panel(); p.classList.add('active');
-   const forms={
-    dashboard:`<h3>📊 Business Dashboard</h3><p>Business command center is ready. Use the Store, Leads, Invoice and Growth tools below.</p><p>Active modules: Store Manager • Lead Center • Invoice Builder • Sales Calculator • Growth Planner</p>`,
-    store:`<h3>🛍️ Store Manager</h3><input id="bpProduct" class="mbh-bp-input" placeholder="Product name"><input id="bpPrice" class="mbh-bp-input" type="number" placeholder="Price"><input id="bpStock" class="mbh-bp-input" type="number" placeholder="Stock"><button class="mbh-bp-btn" onclick="bpSaveStore()">Save Product</button><div id="bpStoreResult" class="mbh-bp-result"></div>`,
-    invoice:`<h3>🧾 Invoice Builder</h3><input id="bpCustomer" class="mbh-bp-input" placeholder="Customer name"><input id="bpItem" class="mbh-bp-input" placeholder="Item"><input id="bpQty" class="mbh-bp-input" type="number" placeholder="Quantity"><input id="bpRate" class="mbh-bp-input" type="number" placeholder="Rate"><button class="mbh-bp-btn" onclick="bpInvoice()">Generate Invoice</button><div id="bpInvoiceResult" class="mbh-bp-result"></div>`,
-    leads:`<h3>🎯 Lead Center</h3><input id="bpLead" class="mbh-bp-input" placeholder="Lead/customer name"><input id="bpNeed" class="mbh-bp-input" placeholder="What are they interested in?"><button class="mbh-bp-btn" onclick="bpLead()">Save Lead</button><div id="bpLeadResult" class="mbh-bp-result"></div>`,
-    sales:`<h3>📈 Sales Calculator</h3><input id="bpUnits" class="mbh-bp-input" type="number" placeholder="Units sold"><input id="bpSell" class="mbh-bp-input" type="number" placeholder="Selling price per unit"><input id="bpCost" class="mbh-bp-input" type="number" placeholder="Cost per unit"><button class="mbh-bp-btn" onclick="bpSales()">Calculate</button><div id="bpSalesResult" class="mbh-bp-result"></div>`,
-    offer:`<h3>🏷️ Offer Builder</h3><input id="bpOfferName" class="mbh-bp-input" placeholder="Offer name"><input id="bpOfferDiscount" class="mbh-bp-input" type="number" placeholder="Discount %"><button class="mbh-bp-btn" onclick="bpOffer()">Create Offer</button><div id="bpOfferResult" class="mbh-bp-result"></div>`,
-    finder:`<h3>🔎 Business Finder</h3><input id="bpFind" class="mbh-bp-input" placeholder="Search products, services or business areas" oninput="bpFind()"><div id="bpFindResult" class="mbh-bp-result"></div>`,
-    growth:`<h3>🚀 Growth Planner</h3><input id="bpGoal" class="mbh-bp-input" placeholder="Your business goal"><input id="bpMonths" class="mbh-bp-input" type="number" placeholder="Months"><button class="mbh-bp-btn" onclick="bpGrowth()">Build Plan</button><div id="bpGrowthResult" class="mbh-bp-result"></div>`
-   }; p.innerHTML=forms[type]||forms.dashboard; p.scrollIntoView({behavior:'smooth',block:'center'});
+const K='mbh_business_suite_v1';
+const get=()=>{try{return JSON.parse(localStorage.getItem(K)||'{"products":[],"customers":[],"leads":[],"income":[],"expenses":[],"tasks":[],"goals":[],"reviews":[],"ideas":[]}')}catch(e){return {products:[],customers:[],leads:[],income:[],expenses:[],tasks:[],goals:[],reviews:[],ideas:[]}}};
+const put=d=>localStorage.setItem(K,JSON.stringify(d));
+const esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const P=()=>document.getElementById('mbhBusinessPanel');
+
+window.mbhOpen=function(k){
+ const v={
+ dashboard:`<h3>📊 Business Dashboard</h3><div id="mbhDash"></div>`,
+ store:`<h3>🛒 Store Manager</h3><input id="pName" placeholder="Product name"><input id="pPrice" type="number" placeholder="Price"><input id="pStock" type="number" placeholder="Stock"><input id="pCat" placeholder="Category"><button class="mbh-suite-btn" onclick="mbhAddProduct()">Add Product</button><div id="pList"></div>`,
+ crm:`<h3>👥 Customer CRM</h3><input id="cName" placeholder="Customer name"><input id="cContact" placeholder="Contact"><select id="cStatus"><option>New</option><option>Active</option><option>VIP</option><option>Inactive</option></select><textarea id="cNote" placeholder="Notes"></textarea><button class="mbh-suite-btn" onclick="mbhAddCustomer()">Save Customer</button><div id="cList"></div>`,
+ leads:`<h3>🎯 Lead Center</h3><input id="lName" placeholder="Lead name"><input id="lInterest" placeholder="Interested in"><select id="lStatus"><option>New</option><option>Contacted</option><option>Interested</option><option>Negotiation</option><option>Converted</option><option>Lost</option></select><button class="mbh-suite-btn" onclick="mbhAddLead()">Save Lead</button><div id="lList"></div>`,
+ finance:`<h3>💰 Finance Center</h3><input id="fIn" type="number" placeholder="Income"><button class="mbh-suite-btn" onclick="mbhMoney(1)">Add Income</button><input id="fEx" type="number" placeholder="Expense"><button class="mbh-suite-btn" onclick="mbhMoney(0)">Add Expense</button><div id="fResult"></div>`,
+ invoice:`<h3>🧾 Invoice & Quote</h3><input id="iCustomer" placeholder="Customer"><input id="iItem" placeholder="Product/service"><input id="iQty" type="number" placeholder="Quantity"><input id="iRate" type="number" placeholder="Rate"><select id="iType"><option>Invoice</option><option>Quotation</option></select><button class="mbh-suite-btn" onclick="mbhInvoice()">Generate</button><div id="iResult"></div>`,
+ inventory:`<h3>📦 Inventory</h3><div id="invList"></div>`,
+ analytics:`<h3>📈 Analytics</h3><div id="anList"></div>`,
+ marketing:`<h3>📣 Marketing Center</h3><input id="mProduct" placeholder="Product/service"><input id="mOffer" placeholder="Offer"><input id="mAudience" placeholder="Target audience"><button class="mbh-suite-btn" onclick="mbhMarketing()">Build Campaign</button><div id="mResult"></div>`,
+ assistant:`<h3>🤖 Business Assistant</h3><input id="aTopic" placeholder="Business topic"><select id="aType"><option>Business Idea</option><option>Business Name</option><option>Slogan</option><option>Product Description</option><option>Marketing Idea</option><option>Business Plan</option></select><button class="mbh-suite-btn" onclick="mbhAssistant()">Generate</button><div id="aResult"></div>`,
+ directory:`<h3>🏪 Business Directory</h3><input id="dName" placeholder="Business name"><input id="dCat" placeholder="Category"><input id="dLoc" placeholder="Location"><textarea id="dAbout" placeholder="About"></textarea><button class="mbh-suite-btn" onclick="mbhProfile()">Save Profile</button><div id="dResult"></div>`,
+ reviews:`<h3>⭐ Reviews</h3><input id="rName" placeholder="Customer"><select id="rRating"><option>5</option><option>4</option><option>3</option><option>2</option><option>1</option></select><textarea id="rText" placeholder="Review"></textarea><button class="mbh-suite-btn" onclick="mbhReview()">Add Review</button><div id="rList"></div>`,
+ notifications:`<h3>🔔 Notifications</h3><div id="nList"></div>`,
+ planner:`<h3>📅 Business Planner</h3><input id="tName" placeholder="Task"><input id="tDate" type="date"><button class="mbh-suite-btn" onclick="mbhTask()">Add Task</button><div id="tList"></div>`,
+ goals:`<h3>🎯 Goal Tracker</h3><input id="gName" placeholder="Goal"><input id="gTarget" type="number" placeholder="Target"><input id="gCurrent" type="number" placeholder="Current"><button class="mbh-suite-btn" onclick="mbhGoal()">Save Goal</button><div id="gList"></div>`,
+ achievements:`<h3>🏆 Achievements</h3><div id="achList"></div>`,
+ marketplace:`<h3>🌐 Marketplace Hub</h3><p>Products • Digital Services • AI • Marketing • Design • Websites • Business Solutions</p>`,
+ ideas:`<h3>💡 Business Idea Lab</h3><input id="ideaText" placeholder="Business idea"><button class="mbh-suite-btn" onclick="mbhIdea()">Save Idea</button><div id="ideaList"></div>`
  };
- window.bpSaveStore=()=>{let n=document.getElementById('bpProduct').value,p=document.getElementById('bpPrice').value,s=document.getElementById('bpStock').value;localStorage.setItem('mbh_product_'+n,JSON.stringify({price:p,stock:s}));document.getElementById('bpStoreResult').textContent=n+' saved locally with price ₹'+p+' and stock '+s+'.'};
- window.bpInvoice=()=>{let q=+document.getElementById('bpQty').value||0,r=+document.getElementById('bpRate').value||0,n=document.getElementById('bpCustomer').value||'Customer';document.getElementById('bpInvoiceResult').textContent='Invoice for '+n+' • Total: ₹'+(q*r).toFixed(2);};
- window.bpLead=()=>{let n=document.getElementById('bpLead').value,need=document.getElementById('bpNeed').value;localStorage.setItem('mbh_lead_'+n,need);document.getElementById('bpLeadResult').textContent='Lead saved: '+n+' — '+need;};
- window.bpSales=()=>{let u=+bpUnits.value||0,s=+bpSell.value||0,c=+bpCost.value||0;document.getElementById('bpSalesResult').textContent='Revenue: ₹'+(u*s).toFixed(2)+' • Cost: ₹'+(u*c).toFixed(2)+' • Profit: ₹'+(u*(s-c)).toFixed(2);};
- window.bpOffer=()=>{document.getElementById('bpOfferResult').textContent='Offer created: '+(bpOfferName.value||'New Offer')+' — '+(bpOfferDiscount.value||0)+'% discount.';};
- window.bpFind=()=>{let q=(document.getElementById('bpFind').value||'').toLowerCase();let els=[...document.querySelectorAll('h2,h3,a,button,.business-option-card,.more-business-card')];let hits=els.filter(e=>(e.innerText||'').toLowerCase().includes(q)).slice(0,8);document.getElementById('bpFindResult').innerHTML=hits.length?hits.map(e=>'<div>• '+e.innerText.slice(0,90)+'</div>').join(''):'No matching business area found yet.';};
- window.bpGrowth=()=>{let g=bpGoal.value||'business growth',m=+bpMonths.value||3;document.getElementById('bpGrowthResult').innerHTML='Goal: '+g+'<br>Month 1: Foundation<br>Month '+Math.max(2,Math.ceil(m/2))+': Growth & testing<br>Month '+m+': Review & improve';};
+ P().innerHTML=v[k]||v.dashboard;P().classList.add('active');P().scrollIntoView({behavior:'smooth',block:'center'});mbhRender(k);
+};
+
+function mbhRender(k){
+ if(k==='dashboard')dash();if(k==='store')products();if(k==='crm')customers();if(k==='leads')leads();
+ if(k==='finance')finance();if(k==='inventory')inventory();if(k==='analytics')analytics();
+ if(k==='reviews')reviews();if(k==='notifications')notifications();if(k==='planner')tasks();
+ if(k==='goals')goals();if(k==='achievements')achievements();if(k==='ideas')ideas();
+}
+function dash(){let d=get(),r=d.income.reduce((a,b)=>a+b,0),e=d.expenses.reduce((a,b)=>a+b,0);document.getElementById('mbhDash').innerHTML=`<div class="mbh-kpis"><div class="mbh-kpi"><b>₹${r}</b>Revenue</div><div class="mbh-kpi"><b>₹${e}</b>Expenses</div><div class="mbh-kpi"><b>₹${r-e}</b>Profit</div><div class="mbh-kpi"><b>${d.products.length}</b>Products</div><div class="mbh-kpi"><b>${d.customers.length}</b>Customers</div><div class="mbh-kpi"><b>${d.leads.length}</b>Leads</div></div>`}
+window.mbhAddProduct=()=>{let d=get();d.products.push({n:pName.value,p:+pPrice.value||0,s:+pStock.value||0,c:pCat.value});put(d);products()}
+function products(){let d=get();document.getElementById('pList').innerHTML=d.products.length?'<table class="mbh-table"><tr><th>Product</th><th>Category</th><th>Price</th><th>Stock</th></tr>'+d.products.map(x=>`<tr><td>${esc(x.n)}</td><td>${esc(x.c)}</td><td>₹${x.p}</td><td>${x.s}</td></tr>`).join('')+'</table>':'<p>No products yet.</p>'}
+window.mbhAddCustomer=()=>{let d=get();d.customers.push({n:cName.value,c:cContact.value,s:cStatus.value,note:cNote.value});put(d);customers()}
+function customers(){let d=get();document.getElementById('cList').innerHTML=d.customers.map(x=>`<p>👤 <b>${esc(x.n)}</b> — ${esc(x.s)} — ${esc(x.c)}</p>`).join('')||'<p>No customers yet.</p>'}
+window.mbhAddLead=()=>{let d=get();d.leads.push({n:lName.value,i:lInterest.value,s:lStatus.value});put(d);leads()}
+function leads(){let d=get();document.getElementById('lList').innerHTML=d.leads.map(x=>`<p>🎯 <b>${esc(x.n)}</b> — ${esc(x.s)} — ${esc(x.i)}</p>`).join('')||'<p>No leads yet.</p>'}
+window.mbhMoney=inc=>{let d=get(),v=+(inc?fIn.value:fEx.value)||0;if(!v)return;d[inc?'income':'expenses'].push(v);put(d);finance()}
+function finance(){let d=get(),r=d.income.reduce((a,b)=>a+b,0),e=d.expenses.reduce((a,b)=>a+b,0);document.getElementById('fResult').innerHTML=`<div class="mbh-kpis"><div class="mbh-kpi"><b>₹${r}</b>Income</div><div class="mbh-kpi"><b>₹${e}</b>Expenses</div><div class="mbh-kpi"><b>₹${r-e}</b>Profit</div></div>`}
+window.mbhInvoice=()=>{let total=(+iQty.value||0)*(+iRate.value||0);document.getElementById('iResult').innerHTML=`<h4>${iType.value}</h4><p>Customer: ${esc(iCustomer.value)}</p><p>${esc(iItem.value)} × ${iQty.value} = <b>₹${total.toFixed(2)}</b></p><button class="mbh-suite-btn" onclick="window.print()">Print</button>`}
+function inventory(){let d=get();document.getElementById('invList').innerHTML=d.products.map(x=>`<p>${esc(x.n)} — ${x.s<=5?'⚠️ Low stock':'✅ In stock'} — ${x.s} units</p>`).join('')||'<p>Add products first.</p>'}
+function analytics(){let d=get(),r=d.income.reduce((a,b)=>a+b,0),e=d.expenses.reduce((a,b)=>a+b,0);document.getElementById('anList').innerHTML=`<div class="mbh-kpis"><div class="mbh-kpi"><b>₹${r}</b>Revenue</div><div class="mbh-kpi"><b>₹${e}</b>Expenses</div><div class="mbh-kpi"><b>₹${r-e}</b>Profit</div></div>`}
+window.mbhMarketing=()=>{mResult.innerHTML=`Campaign for <b>${esc(mProduct.value)}</b><br>Offer: ${esc(mOffer.value)}<br>Audience: ${esc(mAudience.value)}<br><br>Suggested message: Discover ${esc(mProduct.value)} today with ${esc(mOffer.value)}.`}
+window.mbhAssistant=()=>{let t=aTopic.value||'your business',x=aType.value;let m={'Business Idea':`Build a small, testable offer around ${t} and validate customer demand.`,'Business Name':`${t} Hub • ${t} Works • ${t} Studio • ${t} Solutions`,'Slogan':`${t}: Simple. Smart. Built to grow.`,'Product Description':`${t} is a customer-focused offering designed to provide useful value.`,'Marketing Idea':`Create a clear offer for ${t}, publish promotional content and track enquiries.`,'Business Plan':'1. Customer  2. Problem  3. Offer  4. Pricing  5. Marketing  6. Sales  7. Improve'}[x];aResult.textContent=m}
+window.mbhProfile=()=>{let d=get();d.profile={n:dName.value,c:dCat.value,l:dLoc.value,a:dAbout.value};put(d);dResult.textContent='Business profile saved locally.'}
+window.mbhReview=()=>{let d=get();d.reviews.push({n:rName.value,r:rRating.value,t:rText.value});put(d);reviews()}
+function reviews(){let d=get();document.getElementById('rList').innerHTML=d.reviews.map(x=>`<p>⭐ ${x.r}/5 — <b>${esc(x.n)}</b>: ${esc(x.t)}</p>`).join('')||'<p>No reviews yet.</p>'}
+function notifications(){let d=get(),low=d.products.filter(x=>x.s<=5);document.getElementById('nList').innerHTML=(low.length?low.map(x=>`<p>⚠️ Low stock: ${esc(x.n)}</p>`).join(''):'<p>✅ No low-stock alerts.</p>')+`<p>Products: ${d.products.length} • Customers: ${d.customers.length} • Leads: ${d.leads.length}</p>`}
+window.mbhTask=()=>{let d=get();d.tasks.push({n:tName.value,date:tDate.value});put(d);tasks()}
+function tasks(){let d=get();document.getElementById('tList').innerHTML=d.tasks.map(x=>`<p>📅 ${esc(x.date)} — ${esc(x.n)}</p>`).join('')||'<p>No tasks yet.</p>'}
+window.mbhGoal=()=>{let d=get();d.goals.push({n:gName.value,t:+gTarget.value||0,c:+gCurrent.value||0});put(d);goals()}
+function goals(){let d=get();document.getElementById('gList').innerHTML=d.goals.map(x=>`<p>🎯 <b>${esc(x.n)}</b> — ${x.c}/${x.t} (${x.t?Math.min(100,x.c/x.t*100).toFixed(0):0}%)</p>`).join('')||'<p>No goals yet.</p>'}
+function achievements(){let d=get(),a=[['First Product',d.products.length>=1],['First Customer',d.customers.length>=1],['First Lead',d.leads.length>=1],['First Revenue',d.income.length>0],['10 Products',d.products.length>=10],['10 Customers',d.customers.length>=10]];document.getElementById('achList').innerHTML=a.map(x=>`<p>${x[1]?'🏆':'🔒'} ${x[0]}</p>`).join('')}
+window.mbhIdea=()=>{let d=get();d.ideas.push(ideaText.value);put(d);ideas()}
+function ideas(){let d=get();document.getElementById('ideaList').innerHTML=d.ideas.map((x,i)=>`<p>💡 ${i+1}. ${esc(x)}</p>`).join('')||'<p>No saved ideas yet.</p>'}
 })();
 </script>
 
