@@ -955,6 +955,46 @@ body.mbh-dark .mbh-skill{background:#1f2937;color:#fff;border-color:#334155}
 @media(max-width:650px){.mbh-suite{padding:50px 16px}}
 </style>
 
+<style id="mbh-clarity-motion-upgrade">
+/* MY BUSINESS HUB: crisp typography, accessible contrast, and premium motion */
+:root{--mbh-ink:#14213d;--mbh-body:#34445f;--mbh-blue:#2456d8;--mbh-violet:#6844d6;--mbh-line:#d7e0ef;--mbh-surface:#fff}
+html{scroll-behavior:smooth;scroll-padding-top:88px;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{font-size:16px;line-height:1.65;letter-spacing:.005em;color:var(--mbh-ink)}
+p,li,dd,dt,small,.description,.subtitle{line-height:1.7}
+p,li,.description,.subtitle{color:var(--mbh-body)}
+h1,h2,h3,h4,h5,h6{line-height:1.22;letter-spacing:-.018em;font-weight:750;color:var(--mbh-ink);text-shadow:none}
+h1{letter-spacing:-.03em}
+button,input,textarea,select{font:inherit;line-height:1.45}
+button,.btn,[role="button"]{font-weight:700;letter-spacing:.01em;cursor:pointer;transition:transform .22s ease,box-shadow .22s ease,filter .22s ease}
+button:hover,.btn:hover,[role="button"]:hover{transform:translateY(-2px);filter:brightness(1.035);box-shadow:0 12px 26px rgba(36,86,216,.22)}
+button:active,.btn:active,[role="button"]:active{transform:translateY(0) scale(.985)}
+a{ text-underline-offset:3px; text-decoration-thickness:1px }
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:3px solid #2563eb!important;outline-offset:3px!important}
+input,textarea,select{min-height:44px;border-radius:10px;border-color:#b9c7dc!important;color:#14213d!important;background:#fff!important}
+input::placeholder,textarea::placeholder{color:#64748b!important;opacity:1}
+.card,.service-card,.product-card,.study-card,.about-card,.quiz-card,.feature-card,.glass-card,.business-option-card,[class*="tool-card"],[class*="panel"]{transition:transform .28s cubic-bezier(.2,.75,.25,1),box-shadow .28s ease,border-color .28s ease;backface-visibility:hidden}
+.card:hover,.service-card:hover,.product-card:hover,.study-card:hover,.about-card:hover,.quiz-card:hover,.feature-card:hover,.glass-card:hover,.business-option-card:hover,[class*="tool-card"]:hover{transform:translateY(-4px);box-shadow:0 18px 38px rgba(30,55,100,.14);border-color:rgba(74,105,220,.35)}
+/* Soft entrance motion without moving the page background */
+@keyframes mbhRiseIn{from{opacity:0;transform:translate3d(0,16px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+@keyframes mbhSoftGlow{0%,100%{box-shadow:0 8px 24px rgba(36,86,216,.10)}50%{box-shadow:0 12px 30px rgba(104,68,214,.18)}}
+@keyframes mbhShimmer{0%{background-position:180% 0}100%{background-position:-180% 0}}
+@keyframes mbhNudge{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+header,.site-header,.navbar{box-shadow:0 6px 24px rgba(25,45,85,.08)}
+header h1,.hero h1,.hero-section h1{animation:mbhRiseIn .65s cubic-bezier(.2,.75,.25,1) both}
+.hero p,.hero-section p{animation:mbhRiseIn .75s .08s both}
+.hero button,.hero .btn,.hero-section button,.hero-section .btn{animation:mbhRiseIn .75s .16s both}
+.ai-search-box,.brain-card{animation:mbhSoftGlow 5s ease-in-out infinite}
+.marketplace-tag,.badge,.tag{transition:transform .2s ease,box-shadow .2s ease}
+.marketplace-tag:hover,.badge:hover,.tag:hover{transform:translateY(-2px);box-shadow:0 6px 15px rgba(36,86,216,.13)}
+/* Keep text clear in all theme states, including nested cards */
+main,section,article,.card,.panel,.modal,.dropdown-menu{ text-shadow:none }
+.card p,.card li,.panel p,.panel li,.modal p,.modal li{color:#34445f}
+small,.small,.helper-text,.form-text{font-size:.875rem;line-height:1.6;color:#52627a}
+hr{border:0;border-top:1px solid var(--mbh-line)}
+::selection{background:#cfe0ff;color:#10234a}
+@media(max-width:640px){body{font-size:16px;line-height:1.65}h1{font-size:clamp(1.8rem,8vw,2.6rem)}h2{font-size:clamp(1.45rem,6vw,2rem)}button,.btn{min-height:44px}.card,.service-card,.product-card,.study-card{border-radius:16px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important;transform:none!important}}
+</style>
 </head> 
  
 <body> 
