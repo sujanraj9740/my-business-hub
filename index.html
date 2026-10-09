@@ -6864,5 +6864,51 @@ render();
 })();
 </script>
 
+
+<style id="auronexis-elegant-whole-site-theme">
+/* AURONEXIS elegant whole-site palette: pearl, blush, lavender and plum */
+:root{color-scheme:light;--ax-ink:#30213f;--ax-muted:#6d5a7b;--ax-line:rgba(130,83,153,.20);--ax-lilac:#eee5ff;--ax-pink:#ffe5f0;--ax-accent:#8b4fb3}
+html{background:#f6effb!important;scroll-behavior:smooth}
+body{background:linear-gradient(125deg,#fff5f8 0%,#f2eaff 27%,#e9e8ff 52%,#fff0f7 76%,#f4e9ff 100%)!important;background-attachment:fixed!important;color:var(--ax-ink)!important}
+body::before{content:""!important;position:fixed!important;inset:-12%!important;z-index:0!important;pointer-events:none!important;background:radial-gradient(ellipse at 12% 14%,rgba(255,144,190,.28),transparent 34%),radial-gradient(ellipse at 83% 18%,rgba(166,130,255,.27),transparent 34%),radial-gradient(ellipse at 72% 78%,rgba(255,192,219,.25),transparent 36%),radial-gradient(ellipse at 18% 84%,rgba(176,151,255,.22),transparent 34%)!important;filter:blur(32px)!important;animation:axElegantAmbient 28s ease-in-out infinite alternate!important}
+body::after{opacity:.17!important;background-image:linear-gradient(rgba(125,82,153,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(125,82,153,.055) 1px,transparent 1px)!important;background-size:56px 56px!important}
+@keyframes axElegantAmbient{from{transform:translate3d(-1%,0,0) scale(1)}to{transform:translate3d(1%,1%,0) scale(1.045)}}
+body,body>*,main,section,article,header,nav,footer{position:relative}
+header,.auronexis-header-premium{background:linear-gradient(120deg,rgba(255,247,251,.96),rgba(238,226,255,.96) 52%,rgba(255,235,246,.96))!important;color:#342044!important;border-color:rgba(157,105,185,.28)!important;box-shadow:0 14px 38px rgba(93,57,123,.10)!important}
+header h1,header h2,header h3,.auronexis-header-premium h1,.auronexis-header-premium h2{color:#4a285f!important;text-shadow:0 2px 18px rgba(181,111,214,.13)!important}
+nav{background:rgba(248,240,255,.92)!important;border-color:rgba(145,94,171,.22)!important;box-shadow:0 8px 24px rgba(85,52,111,.08)!important;backdrop-filter:blur(18px)!important}
+nav a,nav button{color:#57336d!important}
+section,body>section,main,article,.container,.card,.feature-card,.service-card,.product-card,.study-card,.tool-card,.modal-content,.panel,.dashboard-card,.ax-suite,.ax-suite-head,.ax-tool-card,.ax-card{color:#382747!important;border-color:rgba(139,91,164,.18)!important}
+body>section,.container,.card,.feature-card,.service-card,.product-card,.study-card,.tool-card,.modal-content,.panel,.dashboard-card,.ax-suite,.ax-tool-card,.ax-card{background:rgba(255,251,255,.76)!important;box-shadow:0 10px 30px rgba(90,57,116,.07)!important;backdrop-filter:blur(14px)}
+h1,h2,h3,h4,h5,h6{color:#48295e}
+p,label,li,small{ text-shadow:none }
+input,select,textarea{background:rgba(255,255,255,.92)!important;color:#352541!important;border-color:rgba(137,91,161,.32)!important;box-shadow:inset 0 1px 2px rgba(73,43,93,.035)!important}
+input::placeholder,textarea::placeholder{color:#8b7a97!important}
+button,.btn,.button{transition:transform .22s ease,box-shadow .22s ease,filter .22s ease}
+button:hover,.btn:hover,.button:hover{filter:saturate(1.08);box-shadow:0 8px 20px rgba(142,79,178,.17)!important}
+/* Harmonize separately-built tool panels that previously carried their own near-black backgrounds */
+#mbhEarn,#mbhSuperSuite,#mbhUltimate,#mbhMega,#bghMore,#axBusinessSuite,#mbhBusinessGrowthSuite{background:linear-gradient(135deg,rgba(255,248,253,.96),rgba(239,231,255,.95),rgba(255,239,247,.96))!important;color:#352443!important;border-color:rgba(145,91,169,.23)!important;box-shadow:0 18px 48px rgba(93,57,123,.10)!important}
+#mbhEarn h2,#mbhEarn h3,#mbhSuperSuite h2,#mbhSuperSuite h3,#mbhUltimate h2,#mbhUltimate h3,#mbhMega h2,#mbhMega h3,#bghMore h2,#bghMore h3,#axBusinessSuite h2,#axBusinessSuite h3{color:#4c2d62!important}
+#mbhEarn .eh-card,#mbhSuperSuite .ss-card,#mbhUltimate .mbhU-card,#mbhMega .mega-card,#bghMore .bgh-card,#axBusinessSuite .ax-feature{background:rgba(255,255,255,.82)!important;color:#392849!important;border-color:rgba(147,99,173,.22)!important;box-shadow:0 8px 24px rgba(87,52,111,.07)!important}
+#mbhEarn input,#mbhEarn select,#mbhEarn textarea,#mbhSuperSuite input,#mbhSuperSuite select,#mbhSuperSuite textarea,#mbhMega input,#mbhMega select,#mbhMega textarea,#bghMore input,#bghMore select,#bghMore textarea,#axBusinessSuite input,#axBusinessSuite select,#axBusinessSuite textarea{background:#fffaff!important;color:#342442!important;border-color:#d9c4e6!important}
+#mbhEarn .eh-item,#mbhEarn .eh-status,#mbhSuperSuite .ss-output,#mbhMega .mega-result,#bghMore .bgh-result,#axBusinessSuite li{background:#f6effb!important;color:#463052!important;border-color:#e2d2ed!important}
+#mbhEarn .eh-muted,#mbhEarn .eh-small,#mbhSuperSuite .ss-muted,#mbhMega .mega-muted,#bghMore .bgh-muted{color:#756382!important}
+#mbhUltimate .mbhU-hero,#mbhMega .mega-hero{background:linear-gradient(120deg,#6f3d8c,#a65c9f,#7663bf)!important;color:#fff!important}
+#mbhUltimate .mbhU-hero h2,#mbhMega .mega-hero h2{color:#fff!important}
+#mbhUltimate .mbhU-hero p,#mbhMega .mega-hero p{color:#fff0fb!important}
+#mbhUltimate .mbhU-kpi,#mbhMega .mega-kpi{background:#f2eaff!important;color:#432a59!important}
+#mbhUltimate .mbhU-kpi b,#mbhMega .mega-kpi b{color:#8651ad!important}
+#mbhUltimate .mbhU-ai-answer{background:#fffaff!important;color:#392849!important}
+#mbhEarn .eh-disclaimer{background:#fff5e8!important;color:#774a26!important;border-color:#e5b977!important}
+#mbhUltimate .mbhU-btn,#mbhMega .mega-btn,#mbhEarn button,#mbhSuperSuite button,#bghMore button,#axBusinessSuite button{background:linear-gradient(120deg,#8b5bb1,#ba6f9f)!important;color:#fff!important;border-color:rgba(255,255,255,.38)!important}
+#mbhUltimate .mbhU-btn.secondary{background:#eee5f7!important;color:#523b66!important}
+#mbhUltimate table th,#mbhMega table th{background:#eadcf7!important;color:#442b58!important}
+#mbhUltimate table td,#mbhMega table td{color:#44334f!important;border-color:#e4d7ed!important}
+#mbhUltimate .mbhU-product,#mbhUltimate .mbhU-list,#mbhMega .mega-road-step{color:#392849!important}
+#axBusinessSuite{--ax-ink:#352443}
+@media(prefers-reduced-motion:reduce){body::before{animation:none!important}*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
+@media(max-width:700px){body{background-attachment:scroll!important}}
+</style>
+
 </body> 
 </html>
