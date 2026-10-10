@@ -1264,6 +1264,150 @@ img:hover{filter:saturate(1.08)}
 @media(max-width:700px){#studyHub,.study-hub,[id*="study"],.premium-about-section{background-attachment:scroll}}
 </style>
 
+
+<style id="auronexis-global-contrast-visual-upgrade">
+/* AURONEXIS: global readable headings, visual accents and motion */
+:root { --ax-ink:#111827; --ax-ink-soft:#263449; --ax-purple:#4338ca; --ax-cyan:#0891b2; }
+html { scroll-behavior:smooth; }
+body { color:var(--ax-ink); }
+h1,h2,h3,h4,h5,h6,
+[class*="title"],[class*="heading"],[class*="subtitle"],[class*="sub-title"] {
+  color:var(--ax-ink) !important;
+  -webkit-text-fill-color:var(--ax-ink) !important;
+  text-shadow:none !important;
+  opacity:1 !important;
+  filter:none;
+  text-decoration-color:#7c3aed;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-weight:800 !important;
+  letter-spacing:-.025em;
+  line-height:1.18;
+  position:relative;
+  animation:axTitleEnter .72s cubic-bezier(.2,.75,.25,1) both;
+  scroll-margin-top:110px;
+}
+h1::after,h2::after {
+  content:"";
+  display:block;
+  width:clamp(44px,7vw,76px);
+  height:4px;
+  margin:10px auto 0;
+  border-radius:99px;
+  background:linear-gradient(90deg,#4338ca,#0891b2,#c026d3);
+  background-size:200% 100%;
+  animation:axUnderlineFlow 5s ease-in-out infinite;
+}
+h3::after {
+  content:"";
+  display:block;
+  width:32px;height:3px;margin:7px auto 0;border-radius:99px;
+  background:linear-gradient(90deg,#4338ca,#0891b2);
+}
+p, label, .subtitle, .sub-title, [class*="subtitle"], [class*="description"] {
+  color:var(--ax-ink-soft);
+  opacity:1;
+  line-height:1.65;
+}
+header h1, header h2, nav h1, nav h2, button h1, button h2,
+.mbh-upgrade-bar h1, .mbh-upgrade-bar h2,
+[class*="btn"] h1, [class*="btn"] h2 {
+  color:#111827 !important;
+  -webkit-text-fill-color:#111827 !important;
+}
+header, nav { isolation:isolate; }
+.mbh-upgrade-bar {
+  background:#111827 !important;
+  box-shadow:0 8px 28px rgba(15,23,42,.22) !important;
+  backdrop-filter:blur(16px);
+}
+.mbh-upgrade-search { background:#fff !important; color:#111827 !important; }
+.mbh-upgrade-search::placeholder { color:#625777 !important; opacity:1 !important; }
+.mbh-upgrade-bar .mbh-upgrade-btn { color:#fff !important; -webkit-text-fill-color:#fff !important; }
+section { scroll-margin-top:100px; }
+.hero {
+  background:
+    linear-gradient(115deg,rgba(255,255,255,.94),rgba(238,242,255,.90)),
+    url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=85') center/cover !important;
+  background-attachment:scroll;
+}
+.premium-about-section, #mbhUpgradeTools, .ai-search-section {
+  background-image:
+    radial-gradient(circle at 12% 15%,rgba(139,92,246,.13),transparent 28%),
+    radial-gradient(circle at 88% 80%,rgba(6,182,212,.13),transparent 28%),
+    linear-gradient(135deg,#f8f7ff,#fdf2f8 52%,#effaff) !important;
+}
+.card, .mbh-tool-card, .premium-about-story, .premium-about-card,
+.premium-about-stat, .premium-about-founder, .premium-about-points,
+.premium-about-promise {
+  border:1px solid rgba(99,102,241,.18);
+  box-shadow:0 10px 30px rgba(30,41,59,.10);
+  transition:transform .32s ease, box-shadow .32s ease, border-color .32s ease;
+}
+.card:hover, .mbh-tool-card:hover, .premium-about-story:hover,
+.premium-about-card:hover, .premium-about-stat:hover,
+.premium-about-founder:hover, .premium-about-points:hover,
+.premium-about-promise:hover {
+  transform:translateY(-6px);
+  border-color:rgba(79,70,229,.42);
+  box-shadow:0 18px 42px rgba(49,46,129,.17);
+}
+.services .card, .mbh-tool-card {
+  position:relative; overflow:hidden;
+}
+.services .card::before, .mbh-tool-card::before {
+  content:"";
+  display:block;
+  height:5px;
+  margin:-25px -25px 22px;
+  background:linear-gradient(90deg,#4338ca,#0891b2,#c026d3);
+  background-size:220% 100%;
+  animation:axUnderlineFlow 7s ease-in-out infinite;
+}
+button, .button, a.button, [role="button"] {
+  transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
+}
+button:hover, .button:hover, a.button:hover, [role="button"]:hover {
+  transform:translateY(-2px);
+  box-shadow:0 9px 24px rgba(37,99,235,.22);
+  filter:saturate(1.08);
+}
+input, select, textarea { color:#111827; }
+input::placeholder, textarea::placeholder { color:#625777; opacity:1; }
+
+/* Small themed photo accents across business/service cards */
+.services .card:nth-child(1) {
+  background-image:linear-gradient(rgba(255,255,255,.90),rgba(255,255,255,.94)),url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80');
+  background-size:cover;background-position:center;
+}
+.services .card:nth-child(2) {
+  background-image:linear-gradient(rgba(255,255,255,.90),rgba(255,255,255,.94)),url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=80');
+  background-size:cover;background-position:center;
+}
+.services .card:nth-child(3) {
+  background-image:linear-gradient(rgba(255,255,255,.90),rgba(255,255,255,.94)),url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80');
+  background-size:cover;background-position:center;
+}
+
+@keyframes axTitleEnter {
+  from { opacity:0; transform:translateY(16px); filter:blur(3px); }
+  to { opacity:1; transform:translateY(0); filter:blur(0); }
+}
+@keyframes axUnderlineFlow {
+  0%,100% { background-position:0% 50%; }
+  50% { background-position:100% 50%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior:auto; }
+  *,*::before,*::after {
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+    scroll-behavior:auto !important;
+  }
+}
+</style>
+
 </head> 
  
 <body> 
