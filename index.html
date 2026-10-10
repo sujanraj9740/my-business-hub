@@ -1229,6 +1229,41 @@ h1,h2,h3,h4,.section-title{color:#fff0fb!important;text-shadow:0 0 22px rgba(244
 }
 </style>
 
+
+<style id="auronexis-whole-site-contrast-motion">
+:root{--ax-ink:#172554;--ax-ink2:#312e81;--ax-lilac:#ede9fe;--ax-pink:#fce7f3;--ax-blue:#dbeafe;--ax-glass:rgba(255,255,255,.88)}
+html{scroll-behavior:smooth}
+body{background:radial-gradient(ellipse at 8% 8%,rgba(196,181,253,.32),transparent 35%),radial-gradient(ellipse at 92% 24%,rgba(251,207,232,.34),transparent 32%),linear-gradient(135deg,#fbfaff 0%,#f5f3ff 48%,#fff7fb 100%);color:#26324d}
+/* Keep every heading legible, including Study Hub and dynamically generated panels. */
+h1,h2,h3,h4,h5,h6,header h1,.hero h1,.hero-section h1,.premium-about-section h2,.premium-about-section h3,.premium-about-section h4,#studyHub h2,#studyHub h3,.study-hub h2,.study-hub h3{color:var(--ax-ink)!important;text-shadow:0 1px 0 rgba(255,255,255,.9)!important;opacity:1!important;-webkit-text-fill-color:var(--ax-ink)!important}
+h1,h2{letter-spacing:-.025em}
+h1{animation:axTitleIn .9s cubic-bezier(.16,1,.3,1) both}
+h2,h3{animation:axTitleIn .8s cubic-bezier(.16,1,.3,1) both}
+h1 span,h2 span,h3 span{color:#312e81!important;-webkit-text-fill-color:#312e81!important}
+/* Premium animated title underline */
+h1:after,h2:after{content:"";display:block;width:clamp(48px,9vw,92px);height:4px;margin:10px auto 0;border-radius:99px;background:linear-gradient(90deg,#6366f1,#c026d3,#ec4899);background-size:200% 100%;animation:axUnderline 4s ease-in-out infinite}
+/* Soft pastel panels and gentle lift */
+section{position:relative;isolation:isolate}
+.card,.feature-card,.quiz-card,.brain-card,.glass-card,.premium-about-card,.premium-about-story,.premium-about-founder,.premium-about-points,.premium-about-promise,.premium-about-stat,.ai-search-box{background-color:var(--ax-glass);border:1px solid rgba(139,92,246,.2);box-shadow:0 12px 35px rgba(49,46,129,.08);backdrop-filter:blur(12px);transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
+.card:hover,.feature-card:hover,.quiz-card:hover,.brain-card:hover,.glass-card:hover,.premium-about-card:hover,.premium-about-story:hover,.premium-about-founder:hover,.premium-about-points:hover,.premium-about-stat:hover,.ai-search-box:hover{transform:translateY(-5px);box-shadow:0 20px 44px rgba(79,70,229,.15);border-color:rgba(139,92,246,.42)}
+/* Pastel photographic accents for business + learning areas */
+#studyHub,.study-hub,[id*="study"],.premium-about-section{background-image:linear-gradient(135deg,rgba(250,248,255,.94),rgba(255,247,252,.9)),url('https://images.unsplash.com/photo-1453738773917-9c3eff1db985?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;background-attachment:fixed}
+.hero,.hero-section{background-image:linear-gradient(120deg,rgba(238,242,255,.91),rgba(253,242,248,.88)),url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1800&q=80');background-size:cover;background-position:center}
+/* Study Hub controls: stronger contrast than the pale original labels */
+#studyHub h2,#studyHub h3,.study-hub h2,.study-hub h3,[id*="study"] h2,[id*="study"] h3{color:#172554!important;-webkit-text-fill-color:#172554!important;text-shadow:none!important;font-weight:800!important}
+#studyHub p,.study-hub p,[id*="study"] p{color:#334155}
+select,input,textarea{color:#292344!important;background-color:rgba(255,255,255,.96)!important;border-color:#c4b5fd!important}
+select:focus,input:focus,textarea:focus{outline:3px solid rgba(129,140,248,.22);border-color:#6366f1!important}
+button,.btn,a.button{transition:transform .25s ease,box-shadow .25s ease,filter .25s ease}
+button:hover,.btn:hover,a.button:hover{transform:translateY(-2px);filter:saturate(1.12);box-shadow:0 9px 24px rgba(79,70,229,.2)}
+img{transition:transform .45s ease,filter .45s ease}
+img:hover{filter:saturate(1.08)}
+@keyframes axTitleIn{from{opacity:0;transform:translateY(18px);filter:blur(4px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
+@keyframes axUnderline{0%,100%{background-position:0% 50%;transform:scaleX(.78)}50%{background-position:100% 50%;transform:scaleX(1)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+@media(max-width:700px){#studyHub,.study-hub,[id*="study"],.premium-about-section{background-attachment:scroll}}
+</style>
+
 </head> 
  
 <body> 
