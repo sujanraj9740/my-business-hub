@@ -7073,6 +7073,68 @@ render();
 })();
 </script>
 
+
+<style id="auronexis-distributed-photo-styles">
+.ax-photo-distributed{--axp-ink:#f7f9ff;--axp-muted:#d4deef;--axp-line:rgba(255,255,255,.17);position:relative;isolation:isolate;max-width:1320px;margin:clamp(28px,4vw,58px) auto;padding:clamp(18px,3vw,34px);color:var(--axp-ink);font-family:inherit}
+.ax-photo-distributed:before{content:"";position:absolute;inset:0;z-index:-1;border-radius:25px;background:radial-gradient(ellipse at 15% 0%,rgba(40,105,190,.22),transparent 44%),linear-gradient(145deg,#0b1425,#111c31 60%,#111827);border:1px solid rgba(130,170,225,.18);box-shadow:0 20px 52px rgba(5,12,26,.17)}
+.ax-photo-distributed .ax-photo-head{max-width:740px;margin:0 auto 22px;text-align:center}
+.ax-photo-distributed .ax-photo-kicker{font-size:.72rem;letter-spacing:.17em;font-weight:800;color:#8ec7ff}
+.ax-photo-distributed h2{color:#fff!important;font-size:clamp(1.45rem,2.8vw,2.25rem);line-height:1.12;margin:9px 0;letter-spacing:-.025em}
+.ax-photo-distributed .ax-photo-head p{color:#d4deef!important;font-size:.96rem;line-height:1.6;margin:0}
+.ax-photo-distributed .ax-photo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:210px;gap:13px}
+.ax-photo-distributed .ax-photo-card{position:relative;min-width:0;overflow:hidden;border-radius:17px;background:#15243b;border:1px solid var(--axp-line);box-shadow:0 12px 28px rgba(0,0,0,.22);isolation:isolate;transform:translateZ(0);min-height:200px}
+.ax-photo-distributed .ax-photo-card.ax-photo-wide{grid-column:span 2}.ax-photo-distributed .ax-photo-card.ax-photo-tall{grid-row:span 1}
+.ax-photo-distributed .ax-photo-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.76) saturate(.88);transition:transform .65s cubic-bezier(.2,.7,.2,1),filter .5s ease}
+.ax-photo-distributed .ax-photo-card:hover img{transform:scale(1.055);filter:brightness(.92) saturate(1.04)}
+.ax-photo-distributed .ax-photo-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,12,24,.02) 10%,rgba(5,12,24,.35) 45%,rgba(4,10,22,.94) 100%);pointer-events:none}
+.ax-photo-distributed .ax-photo-copy{position:absolute;left:0;right:0;bottom:0;padding:19px;z-index:1}
+.ax-photo-distributed .ax-photo-copy span{display:inline-block;color:#9dd4ff;font-size:.65rem;font-weight:800;letter-spacing:.13em;margin-bottom:7px}
+.ax-photo-distributed .ax-photo-copy h3{color:#fff!important;font-size:clamp(1rem,1.5vw,1.3rem);line-height:1.2;margin:0 0 6px;font-weight:800;text-shadow:0 2px 14px rgba(0,0,0,.28)}
+.ax-photo-distributed .ax-photo-copy p{color:#e2eaf6!important;font-size:.85rem;line-height:1.45;margin:0;max-width:520px}
+@media(max-width:760px){.ax-photo-distributed .ax-photo-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:200px}.ax-photo-distributed .ax-photo-card.ax-photo-wide{grid-column:span 1}}
+@media(max-width:520px){.ax-photo-distributed{padding:15px;margin:28px 10px}.ax-photo-distributed:before{border-radius:19px}.ax-photo-distributed .ax-photo-grid{grid-template-columns:1fr;grid-auto-rows:225px;gap:11px}}
+@media(prefers-reduced-motion:reduce){.ax-photo-distributed .ax-photo-card img{transition:none!important}}
+</style>
+<script id="auronexis-distribute-photos">
+(function(){
+  const run=()=>{
+    const original=document.getElementById('auronexis-photo-showcase');
+    if(!original || original.dataset.distributed==='yes') return;
+    const grid=original.querySelector('.ax-photo-grid'); if(!grid) return;
+    const cards=Array.from(grid.querySelectorAll('.ax-photo-card'));
+    if(!cards.length) return;
+    const placements=[
+      {id:'home',title:'A business world of possibilities',desc:'Fresh visual inspiration right from the start.',count:2},
+      {id:'about',title:'Ideas, people and progress',desc:'A closer look at the spirit behind AURONEXIS.',count:2},
+      {id:'products',title:'Products and digital commerce',desc:'Visual inspiration for presenting products and services.',count:3},
+      {id:'studies',title:'Learn, create and explore',desc:'Images that bring learning and creativity into the journey.',count:2},
+      {id:'services',title:'Tools that move business forward',desc:'Modern teamwork, technology and business operations.',count:3},
+      {id:'mbhProProjects',title:'Featured ideas in action',desc:'See how planning and collaboration can come together.',count:2},
+      {id:'mbhBusinessSuite',title:'Build a stronger business',desc:'Visuals for organising, improving and growing your work.',count:3}
+    ];
+    let index=0;
+    placements.forEach((place,n)=>{
+      const target=document.getElementById(place.id); if(!target || index>=cards.length) return;
+      const wrap=document.createElement('section'); wrap.className='ax-photo-distributed'; wrap.setAttribute('aria-label',place.title);
+      const head=document.createElement('div'); head.className='ax-photo-head';
+      head.innerHTML='<span class="ax-photo-kicker">AURONEXIS • VISUAL STORY</span><h2>'+place.title+'</h2><p>'+place.desc+'</p>';
+      const newGrid=document.createElement('div'); newGrid.className='ax-photo-grid';
+      for(let j=0;j<place.count && index<cards.length;j++,index++) newGrid.appendChild(cards[index]);
+      wrap.append(head,newGrid); target.insertAdjacentElement('afterend',wrap);
+    });
+    if(index<cards.length){
+      const wrap=document.createElement('section'); wrap.className='ax-photo-distributed';
+      wrap.innerHTML='<div class="ax-photo-head"><span class="ax-photo-kicker">AURONEXIS • MORE INSPIRATION</span><h2>More ideas in action</h2><p>More scenes from the world of modern business and digital creativity.</p></div><div class="ax-photo-grid"></div>';
+      const newGrid=wrap.querySelector('.ax-photo-grid'); while(index<cards.length)newGrid.appendChild(cards[index++]);
+      const last=document.getElementById('auronexis-private-suite')||document.getElementById('auronexis-photo-showcase');
+      last.insertAdjacentElement('afterend',wrap);
+    }
+    original.style.display='none'; original.dataset.distributed='yes';
+  };
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',run,{once:true}); else run();
+})();
+</script>
+
 </body></html></textarea><button onclick="megaRunCode()">▶ Run</button><button onclick="megaCodeChallenge()">🧠 Challenge</button><div id="megaCodeOut" class="mega-result"></div></div>
     <div class="mega-card"><h3>🖥️ Live Preview</h3><iframe id="megaPreview" class="mega-preview" sandbox="allow-scripts"></iframe></div>
     <div class="mega-card"><h3>🐞 Bug Helper</h3><textarea id="megaBug" placeholder="Paste a short HTML/CSS/JS snippet"></textarea><button onclick="megaBugHelp()">Analyze</button><div id="megaBugOut" class="mega-result"></div></div>
@@ -7417,7 +7479,28 @@ button:hover,.btn:hover,.button:hover{filter:saturate(1.08);box-shadow:0 8px 20p
       <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1500&q=85" alt="Team sharing ideas around a table in a bright office" loading="lazy">
       <div class="ax-photo-shade"></div><div class="ax-photo-copy"><span>17 / GROWTH</span><h3>Make room to grow</h3><p>Build strong habits and partnerships for the next stage.</p></div>
     </article>
-  </div>
+  
+    <article class="ax-photo-card ax-photo-wide">
+      <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1500&q=85" alt="Business team sharing ideas around a meeting table" loading="lazy">
+      <div class="ax-photo-shade"></div><div class="ax-photo-copy"><span>18 / TEAMWORK</span><h3>Better ideas, built together</h3><p>Bring people and plans together to move projects forward.</p></div>
+    </article>
+    <article class="ax-photo-card">
+      <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1100&q=85" alt="Laptop displaying business charts and analytics" loading="lazy">
+      <div class="ax-photo-shade"></div><div class="ax-photo-copy"><span>19 / INSIGHTS</span><h3>Turn data into direction</h3><p>Make room for clearer decisions and smarter planning.</p></div>
+    </article>
+    <article class="ax-photo-card">
+      <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1100&q=85" alt="Customer making a secure online payment" loading="lazy">
+      <div class="ax-photo-shade"></div><div class="ax-photo-copy"><span>20 / CHECKOUT</span><h3>A smoother buying journey</h3><p>Design online shopping experiences that feel simple and clear.</p></div>
+    </article>
+    <article class="ax-photo-card ax-photo-tall">
+      <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1100&q=85" alt="Colleagues collaborating in a bright modern workspace" loading="lazy">
+      <div class="ax-photo-shade"></div><div class="ax-photo-copy"><span>21 / COLLABORATION</span><h3>Make teamwork count</h3><p>Share knowledge, organise tasks and build momentum.</p></div>
+    </article>
+    <article class="ax-photo-card ax-photo-wide">
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1500&q=85" alt="Technology team working together on computers" loading="lazy">
+      <div class="ax-photo-shade"></div><div class="ax-photo-copy"><span>22 / TECHNOLOGY</span><h3>Build what comes next</h3><p>Use digital tools and creative thinking to shape new possibilities.</p></div>
+    </article>
+</div>
 </section>
 <style id="auronexis-original-photo-showcase-styles">
 #auronexis-photo-showcase{--axp-ink:#f7f9ff;--axp-muted:#d4deef;--axp-line:rgba(255,255,255,.17);position:relative;isolation:isolate;max-width:1440px;margin:clamp(42px,7vw,96px) auto;padding:clamp(22px,4vw,54px);color:var(--axp-ink);font-family:inherit}
